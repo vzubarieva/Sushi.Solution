@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Sushi.Models.Customer
+
+<h4>Add a new customer</h4>
+@using (Html.BeginForm())
+{
+
+  @Html.LabelFor(model => model.CustomerName)
+  @Html.TextBoxFor(model => model.CustomerName)
+
+}
+
+
+@Html.ActionLink("Show all customers", "Index")

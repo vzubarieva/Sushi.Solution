@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Sushi.Models.Customer
+@using Sushi.Models;
+
+<h2>Customer Details</h2>
+
+@Html.DisplayNameFor(model => model.CustomerName): @Html.DisplayFor(model => model.CustomerName)
+
+
+@* @foreach (Customer customer in Model)
+  {
+  @Html.ActionLink($"{customer.CustomerName}", "Details", "Clients", new { id = customer.CustomerId })
+
+  } *@
+
+
+@Html.ActionLink("Edit customer", "Edit", new { id = Model.CustomerId })
+@Html.ActionLink("Delete customer", "Delete", new { id = Model.CustomerId })
+@Html.ActionLink("Back to list", "Index")

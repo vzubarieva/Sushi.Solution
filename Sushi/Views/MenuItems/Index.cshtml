@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Sushi.Models;
+@model List<Sushi.Models.MenuItem>;
+
+<h1>Menu Items</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No Menu Items have been added yet!</h3>
+}
+
+@foreach (MenuItem item in Model)
+{
+
+  @Html.ActionLink($"{item.MenuItemName}", "Details", new { id = item.MenuItemId })
+
+}
+
+
+@Html.ActionLink("Add new menu item", "Create", new { })
+@Html.ActionLink("Home", "Index", "Home", new { })

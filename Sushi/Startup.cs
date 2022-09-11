@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.EntityFrameworkCore;
+using Sushi.Models;
 
 namespace Sushi
 {
@@ -23,6 +26,17 @@ namespace Sushi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<SushiContext>(
+                dbContextOptions =>
+                    dbContextOptions
+                        .UseMySql(
+                            Configuration.GetConnectionString("DefaultConnection"),
+                            new MySqlServerVersion(new Version(8, 0, 29))
+                        )
+                        // .LogTo(Console.WriteLine, LogLevel.Information)
+                        .EnableSensitiveDataLogging()
+                        .EnableDetailedErrors()
+            );
             services.AddControllersWithViews();
         }
 
@@ -46,12 +60,15 @@ namespace Sushi
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseEndpoints(
+                endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
+                }
+            );
         }
     }
 }
