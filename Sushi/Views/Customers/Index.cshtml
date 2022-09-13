@@ -12,10 +12,12 @@
   <h3>No customers have been added yet!</h3>
 }
 
-@foreach (Customer customer in Model)
-{
-  @Html.ActionLink($"{customer.CustomerName}", "Details", new { id = customer.CustomerId })
-}
+<ul>
+  @foreach (Customer customer in Model)
+  {
+    <li>@Html.ActionLink($"{customer.CustomerName}", "Details", new { id = customer.CustomerId })</li>
+  }
+</ul>
 
 @Html.ActionLink("Add new customer", "Create")
 @Html.ActionLink("Home", "Index", "Home")

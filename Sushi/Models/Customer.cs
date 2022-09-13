@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sushi.Models
 {
@@ -10,6 +11,8 @@ namespace Sushi.Models
         }
 
         public int CustomerId { get; set; }
+
+        [Display(Name = "Customer name")]
         public string CustomerName { get; set; }
         public virtual ICollection<MenuItem> MenuItems { get; set; }
     }

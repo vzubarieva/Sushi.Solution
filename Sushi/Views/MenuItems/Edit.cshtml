@@ -12,8 +12,13 @@
 {
   <ul>
     <li> @Html.HiddenFor(model => model.MenuItemId)</li>
-    <li> @Html.LabelFor(model => model.MenuItemName)
+
+    <li> @Html.LabelFor(model => model.MenuItemName, "Menu Item Name")
       @Html.EditorFor(model => model.MenuItemName)</li>
+
+    <li>@Html.LabelFor(model => model.MenuItemPrice)
+      @Html.EditorFor(model => model.MenuItemPrice)</li>
+
     <li> @Html.LabelFor(model => model.Customer)
       @Html.DropDownList("CustomerId")</li>
   </ul>

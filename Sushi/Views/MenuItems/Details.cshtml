@@ -8,10 +8,12 @@
 <hr />
 <ul>
   <li>@Html.DisplayNameFor(model => model.MenuItemName): @Html.DisplayFor(model => model.MenuItemName)</li>
+  <li>@Html.DisplayNameFor(model => model.MenuItemPrice): @Html.DisplayFor(model => model.MenuItemPrice)</li>
+
 </ul>
 
 
 @Html.ActionLink("Back to list", "Index", new { })
-@Html.ActionLink("Back to customer info", "Details", "Stylists", new { id = Model.CustomerId })
+@Html.ActionLink("Back to customer info", "Details", "Customers", new { id = Model.CustomerId })
 @Html.ActionLink("Edit menu item info", "Edit", new { id = Model.MenuItemId })
 @Html.ActionLink("Delete menu item", "Delete", new { id = Model.MenuItemId })
