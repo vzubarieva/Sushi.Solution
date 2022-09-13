@@ -6,11 +6,13 @@ namespace Sushi.Models
     {
         public int MenuItemId { get; set; }
 
-        [Display(Name = "Menu Item Name")]
+        [Display(Name = "Menu item name")]
         public string MenuItemName { get; set; }
 
-        [Display(Name = "Menu Price")]
+        [Display(Name = "Menu item price")]
         public int MenuItemPrice { get; set; }
+        public string UserId { get; set; } // Foreign Key
+        public virtual ApplicationUser User { get; set; }
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
     }
