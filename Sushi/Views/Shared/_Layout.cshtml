@@ -8,25 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/styles.css">
-<<<<<<< HEAD
-  </head>
-  
-  <body class = "bamboo">
-    <div class = "container">
-      <div class = "title">
-    <h1><strong>C H I H I R O ' S</strong><br>
-        Sushi & Bar</h1>
-      </div>
-      @RenderBody()
-=======
 </head>
 
 <body class="bamboo">
-    <header>
+
+            
+            
+     <!-- <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
+                    <img src="img/logo.jpg" width="30" height="30" alt="" loading="lazy">
                 </a>
                 @Html.ActionLink("Home", "Index", "Home", new {}, new {@class =
                 "navbar-brand"})
@@ -59,15 +51,23 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container">
-        @* <div class = "title">
-            <strong>C H I H I R O ' S</strong><br>
-            <p>Sushi & Bar</p>
-            </div> *@
-        @RenderBody()
->>>>>>> 09d4b7f9b2743724c9d10230a06913827eedb64b
-    </div>
+    </header>  -->
+
+    <div class= "container">
+        <div class = "row">
+            <div class = "col1"> 
+            <img  class = "image1" src = "img/title2.png" >
+            @await Html.PartialAsync("NavBar")
+            </div>
+            <div class = "col2">
+
+            @RenderBody()
+            </div>  
+
+        </div>
+     </div> 
+     
+
 </body>
 
 </html>
