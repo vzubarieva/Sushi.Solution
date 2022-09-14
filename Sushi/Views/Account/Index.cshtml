@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@using System.Security.Claims
+
+<h2>Plese login if you are an admin</h2>
+<hr />
+@if (User.Identity.IsAuthenticated)
+{
+  <p>Hello @User.Identity.Name!</p>
+  @using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" class="btn btn-default" value="Log out" />
+    @* @Html.ActionLink("Home", "Index", "Home", new { }) *@
+
+  }
+}
+else
+{
+  <p>@Html.ActionLink("Register", "Register")</p>
+  <p>@Html.ActionLink("Log in", "Login")</p>
+  @* @Html.ActionLink("Home", "Index", "Home", new { }) *@
+
+}

@@ -5,7 +5,7 @@
 @model Sushi.Models.Customer
 @using Sushi.Models;
 
-<h2>Customer Details</h2>
+<h2>Admin Details</h2>
 
 @Html.DisplayNameFor(model => model.CustomerName): @Html.DisplayFor(model => model.CustomerName)
 
@@ -17,6 +17,6 @@
   } *@
 
 
-@Html.ActionLink("Edit customer", "Edit", new { id = Model.CustomerId })
-@Html.ActionLink("Delete customer", "Delete", new { id = Model.CustomerId })
+@Html.ActionLink("Edit admin", "Edit", new { id = Model.CustomerId })
+@Html.ActionLink("Delete admin", "Delete", new { id = Model.CustomerId })
 @Html.ActionLink("Back to list", "Index")

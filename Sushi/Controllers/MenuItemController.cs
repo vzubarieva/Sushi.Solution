@@ -4,15 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 using Sushi.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Sushi.Controllers
 {
     public class MenuItemsController : Controller
     {
         private readonly SushiContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public MenuItemsController(SushiContext db)
+        public MenuItemsController(SushiContext db, UserManager<ApplicationUser> userManager)
         {
+            _userManager = userManager;
             _db = db;
         }
 
@@ -22,6 +28,7 @@ namespace Sushi.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.CustomerId = new SelectList(_db.Customers, "CustomerId", "CustomerName");
@@ -29,15 +36,20 @@ namespace Sushi.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(MenuItem menuItem)
+        public async Task<ActionResult> Create(MenuItem menuItem)
         {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            menuItem.User = currentUser;
             _db.MenuItems.Add(menuItem);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
             var thisMenuItem = _db.MenuItems.FirstOrDefault(menuItem => menuItem.MenuItemId == id);
             return View(thisMenuItem);
         }
@@ -49,9 +61,13 @@ namespace Sushi.Controllers
             return View(thisMenuItem);
         }
 
+        [Authorize]
         [HttpPost]
-        public ActionResult Edit(MenuItem menuItem)
+        public async Task<ActionResult> Edit(MenuItem menuItem)
         {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            menuItem.User = currentUser;
             _db.Entry(menuItem).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");

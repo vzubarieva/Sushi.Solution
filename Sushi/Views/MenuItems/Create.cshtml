@@ -7,6 +7,8 @@
 <h4>Add a new menu item</h4>
 @using (Html.BeginForm())
 {
+  @Html.HiddenFor(model => model.MenuItemId)
+
   @Html.LabelFor(model => model.MenuItemName)
   @Html.TextBoxFor(model => model.MenuItemName)
 

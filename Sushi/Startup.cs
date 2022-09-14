@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+
 using Sushi.Models;
 
 namespace Sushi
@@ -38,6 +41,21 @@ namespace Sushi
                         .EnableDetailedErrors()
             );
             services.AddControllersWithViews();
+            services
+                .AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<SushiContext>()
+                .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(
+                options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequiredLength = 0;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequiredUniqueChars = 0;
+                }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +73,8 @@ namespace Sushi
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 

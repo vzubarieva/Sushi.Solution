@@ -4,22 +4,35 @@ using Microsoft.AspNetCore.Mvc;
 using Sushi.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Sushi.Controllers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         private readonly SushiContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CustomersController(SushiContext db)
+        public CustomersController(UserManager<ApplicationUser> userManager, SushiContext db)
         {
+            _userManager = userManager;
             _db = db;
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            List<Customer> model = _db.Customers.Include(customer => customer.MenuItems).ToList();
-            return View(model);
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            var userCustomers = _db.Customers
+                .Where(entry => entry.User.Id == currentUser.Id)
+                .ToList();
+            // List<Customer> model = _db.Customers.Include(customer => customer.MenuItems).ToList();
+            // return View(model);
+            return View(userCustomers);
         }
 
         public ActionResult Create()
@@ -28,8 +41,11 @@ namespace Sushi.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public async Task<ActionResult> Create(Customer customer)
         {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            customer.User = currentUser;
             _db.Customers.Add(customer);
             _db.SaveChanges();
             return RedirectToAction("Index");

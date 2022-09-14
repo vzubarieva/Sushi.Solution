@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sushi.Models;
 
 namespace Sushi.Migrations
 {
     [DbContext(typeof(SushiContext))]
-    partial class SushiContextModelSnapshot : ModelSnapshot
+    [Migration("20220913034119_addIdentity")]
+    partial class addIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -218,12 +220,7 @@ namespace Sushi.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
-
                     b.HasKey("CustomerId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Customers");
                 });
@@ -243,14 +240,9 @@ namespace Sushi.Migrations
                     b.Property<int>("MenuItemPrice")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
-
                     b.HasKey("MenuItemId");
 
                     b.HasIndex("CustomerId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("MenuItems");
                 });
@@ -306,15 +298,6 @@ namespace Sushi.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Sushi.Models.Customer", b =>
-                {
-                    b.HasOne("Sushi.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Sushi.Models.MenuItem", b =>
                 {
                     b.HasOne("Sushi.Models.Customer", "Customer")
@@ -323,13 +306,7 @@ namespace Sushi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Sushi.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Customer");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sushi.Models.Customer", b =>

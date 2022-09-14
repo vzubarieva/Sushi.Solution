@@ -5,11 +5,11 @@
 @using Sushi.Models;
 @model List<Sushi.Models.Customer>;
 
-<h1>Customers</h1>
+<h1>Admins</h1>
 
 @if (@Model.Count == 0)
 {
-  <h3>No customers have been added yet!</h3>
+  <h3>No admins have been added yet!</h3>
 }
 
 <ul>
@@ -19,5 +19,5 @@
   }
 </ul>
 
-@Html.ActionLink("Add new customer", "Create")
+@Html.ActionLink("Add new admin", "Create")
 @Html.ActionLink("Home", "Index", "Home")
