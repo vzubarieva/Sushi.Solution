@@ -4,7 +4,7 @@
 
 @model Sushi.Models.Customer
 
-<h4>Add a new customer</h4>
+<h4>Add a new admin</h4>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.CustomerId)
@@ -17,4 +17,4 @@
 
 
 
-@Html.ActionLink("Show all customers", "Index")
+@Html.ActionLink("Show all admins", "Index")
