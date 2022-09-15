@@ -31,7 +31,6 @@ namespace Sushi.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(_db.Customers, "CustomerId", "CustomerName");
             return View();
         }
 
@@ -58,7 +57,6 @@ namespace Sushi.Controllers
         public ActionResult Edit(int id)
         {
             var thisMenuItem = _db.MenuItems.FirstOrDefault(menuItem => menuItem.MenuItemId == id);
-            ViewBag.CustomerId = new SelectList(_db.Customers, "CustomerId", "CustomerName");
             return View(thisMenuItem);
         }
 
@@ -91,9 +89,7 @@ namespace Sushi.Controllers
 
         public ActionResult Menu()
         {
-            
             return View();
         }
-
     }
 }

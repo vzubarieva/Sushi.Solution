@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sushi.Models;
 
 namespace Sushi.Migrations
 {
     [DbContext(typeof(SushiContext))]
-    partial class SushiContextModelSnapshot : ModelSnapshot
+    [Migration("20220915063153_changed_tables1")]
+    partial class changed_tables1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,6 +211,25 @@ namespace Sushi.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Sushi.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("CustomerId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("Sushi.Models.MenuItem", b =>
                 {
                     b.Property<int>("MenuItemId")
@@ -237,14 +258,14 @@ namespace Sushi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ItemsCount")
                         .HasColumnType("int");
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("double");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
 
                     b.Property<double>("subTotalPrice")
                         .HasColumnType("double");
@@ -330,6 +351,15 @@ namespace Sushi.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Sushi.Models.Customer", b =>
+                {
+                    b.HasOne("Sushi.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sushi.Models.MenuItem", b =>
