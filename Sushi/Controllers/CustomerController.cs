@@ -26,6 +26,7 @@ namespace Sushi.Controllers
         public async Task<ActionResult> Index()
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
             var currentUser = await _userManager.FindByIdAsync(userId);
             var userCustomers = _db.Customers
                 .Where(entry => entry.User.Id == currentUser.Id)

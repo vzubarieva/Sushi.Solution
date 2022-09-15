@@ -40,6 +40,7 @@ namespace Sushi.Controllers
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
+            // ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
             menuItem.User = currentUser;
             _db.MenuItems.Add(menuItem);
             _db.SaveChanges();

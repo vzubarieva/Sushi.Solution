@@ -15,11 +15,10 @@
 @foreach (MenuItem item in Model)
 {
 
-  @Html.ActionLink($"{item.MenuItemName}", "Details", new { id = item.MenuItemId })
-  @Html.ActionLink($"{item.MenuItemPrice}", "Details", new { id = item.MenuItemId })
+  @Html.ActionLink($"{item.MenuItemName}", "Details", " ", new { id = item.MenuItemId }, new {@class="btn btn-light"})
+  @Html.ActionLink($"{item.MenuItemPrice}", "Details", " ", new { id = item.MenuItemId }, new {@class="btn btn-light"})
 
 }
 
 
 @Html.ActionLink("Add new menu item", "Create", new { })
-@Html.ActionLink("Home", "Index", "Home", new { })
