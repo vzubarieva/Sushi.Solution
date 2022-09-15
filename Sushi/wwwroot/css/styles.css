@@ -1,22 +1,94 @@
 .bamboo {
-  /* background-image: url("../img/bg1.jpg"); */
-  /* background-image: url("../img/bamboo1.png"); */
-   background-image: url("../img/20523697.jpg");
-   
-
+  background-image: url("../img/bamboo1.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   max-width: 90%;
-  
-  margin: 5%;
   align-content: center;
   width: 100%;
   height: 1000px;
   display: block;
-  float:left;
 }
 
-.btnbtn-light {
-display: inline;
+.image4 {
+  margin-top: 1%;
+  width: 615px;
+  border: 5px solid rgb(16, 16, 16);
+  border-radius: 5px;
+}
+
+.image1 {
+  border-radius: 5px;
+  width: 100%;
+  border: 5px solid  rgb(131, 10, 10);
+  border-radius: 5px;
+}
+
+.image3 {
+  float: right;
+  border-radius: 5px;
+  width: 300px;
+  padding: 2% ;
+  border-radius: 5px;
+}
+
+.image2 {
+  float: left; 
+  border-radius: 5px;
+  width: 300px;
+  padding: 2% ;
+}
+
+.main-nav  {
+  margin-top: 25px;
+  padding: 2px;
+  font-family: Arial;
+  font-weight: bolder;
+  width: 100%;
+  letter-spacing: 5px;
+}
+
+
+.main-nav a:hover  {
+  color: rgb(159, 25, 18);
+}
+
+  .btn {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 20px;
+  color: rgb(244, 209, 144);
+  }
+
+  .btnHome {
+    margin-left: 45px;
+    background-color:rgb(244, 209, 144);
+    padding: 2%  ; 
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(176, 10, 10);
+    border-radius: 5px;
+    }
+
+.row{
+  width: 100%;
+  margin-top: 5%;
+  margin-left: 6%;
+  border-radius: 5px;
+}
+
+.col1 {
+  width: 30%;
+  background:rgb(11, 11, 11) ;
+  padding: 4%  ; 
+  text-align: left;
+  font-weight: bold;
+}
+
+.col2 {
+  background: rgb(121, 13, 7) ;
+  width: 70%;
+  padding: 2% ; 
+  text-align: left;
+  font-weight: bold;
 }

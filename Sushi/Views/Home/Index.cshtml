@@ -1,20 +1,14 @@
 @{
+
   Layout = "_Layout";
 }
 
+<img class = "image2" src = "~/img/sushi4.jpg"> 
+<img class = "image3" src = "~/img/sushi2.jpg"> 
+<img class = "image2" src = "~/img/sushi3.jpg"> 
+<img class = "image3" src = "~/img/sushi1.jpg"> 
 
-<img src="~/img/menu3.png">
 
-@if (ViewBag.isLoggedIn)
-{
 
-  @* <div class="hstack gap-3 pt-3 mt-3 border-top border-dark"> *@
-  @Html.ActionLink("See all admins", "Index", "Customers",new {}, new {@class="btn btn-light"})
-  @Html.ActionLink("See all menu items", "Index", "MenuItems",new {}, new {@class="btn btn-light"})
-}
-else
-{
-  @Html.ActionLink("See all menu items", "Index", "MenuItems",new {}, new {@class="btn btn-light"})
-}
-@* <p>@Html.ActionLink("Create account", "Index", "Account")</p> *@
-@* </div> *@
+
+

@@ -1,0 +1,21 @@
+<nav class="main-nav">
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btnHome" })
+  
+  @Html.ActionLink("Customer", "Index", "Customers", null, new { @class = "btn" })
+  @Html.ActionLink("Menu Item", "Index", "MenuItems",null, new { @class = "btn" })
+  @Html.ActionLink("Menu", "Menu", "MenuItems", null, new { @class = "btn" })
+  @* @Html.ActionLink("Create account", "Index", "Account", null, new { @class = "btn" }) *@
+
+  @if (User.Identity.IsAuthenticated)
+    {
+      @using (Html.BeginForm("LogOff", "Account"))
+      {
+        <button type="submit" class="btn">Log out</button>
+      }
+    }
+    else
+    {
+      @Html.ActionLink("Register", "Register", "Account", new {}, new {@class ="btn"})
+      @Html.ActionLink("Log in", "Login", "Account", new {}, new {@class ="btn"})
+    }
+</nav>

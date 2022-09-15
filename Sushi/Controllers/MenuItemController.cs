@@ -88,5 +88,12 @@ namespace Sushi.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Menu()
+        {
+            
+            return View();
+        }
+
     }
 }
