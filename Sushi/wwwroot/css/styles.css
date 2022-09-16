@@ -256,6 +256,7 @@ h5 {
   font-style: oblique;
 }
 
+/* sliding img home */
 #slider {
 	overflow: hidden;
 }
@@ -300,13 +301,8 @@ h5 {
 	}
 }
 
-.gmap_canvas {
-  overflow:hidden;background:none!important;height:500px;
-  width:600px;
-}
-
+/* google map */
 .mapouter {
-  position:relative;text-align:right;
-  height:500px;
-  width:600px;
+  text-align:right;
+  margin-top: 5%;
 }
