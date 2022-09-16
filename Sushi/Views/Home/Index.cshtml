@@ -2,6 +2,17 @@
   Layout = "_Layout";
 }
 
+<img  id = "imgHome" src = "~/img/inside.png" >
+
+<h3>If you love sushi, you'll love Chihiro's</h3>
+
+<div class="mapouter">
+  <iframe width="649" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=520%20SW%206th%20Ave%20Suite%20300,%20Portland,%20OR%2097204&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+  </iframe>
+</div>
+
+
+
 @* <div class = "topBar">
   @if (User.Identity.IsAuthenticated)
   {
@@ -18,9 +29,10 @@
     @Html.ActionLink("Register/Login", "Index", "Account", null, new { @class = "btnAccount" })
   }
 </div> *@
-<h2>If you love sushi, you'll love Chihiro's</h2>
 
-<div id ="slider">
+
+
+@* <div id ="slider">
   <figure>
     <img   src = "~/img/sushi1.jpg" > 
     <img   src = "~/img/sushi2.jpg" > 
@@ -28,19 +40,7 @@
     <img   src = "~/img/sushi4.jpg" > 
     <img   src = "~/img/sushi1.jpg" > 
   </figure>
-</div>
-
-<div class="mapouter">
-
-    <iframe width="586" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=520%20SW%206th%20Ave%20Suite%20300,%20Portland,%20OR%2097204&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-    </iframe>
-    
-    
-    
-
-</div
-
-
+</div> *@
 
 
 
