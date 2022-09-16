@@ -1,10 +1,15 @@
 <nav class="main-nav">
-  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btnHome" })
+  
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btnHome" })<br>
+
+  @Html.ActionLink("Menu", "Menu", "MenuItems", null, new { @class = "btn" })
+
+  @Html.ActionLink("Order Online", "Index", "MenuItems",null, new { @class = "btn" })
   
   @Html.ActionLink("Customer", "Index", "Customers", null, new { @class = "btn" })
-  @Html.ActionLink("Order Online", "Index", "MenuItems",null, new { @class = "btn" })
-  @Html.ActionLink("Menu", "Menu", "MenuItems", null, new { @class = "btn" })
-  @* @Html.ActionLink("Create account", "Index", "Account", null, new { @class = "btn" }) *@
+  
+  
+  @Html.ActionLink("AboutUs", "AboutUs", "MenuItems", null, new { @class = "btn" })
 
   @if (User.Identity.IsAuthenticated)
     {

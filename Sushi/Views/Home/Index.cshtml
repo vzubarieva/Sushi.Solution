@@ -2,12 +2,28 @@
   Layout = "_Layout";
 }
 
+@* <div class = "topBar">
+  @if (User.Identity.IsAuthenticated)
+  {
 
+    <h2>Welcome @User.Identity.Name !</h2>
+
+  @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btnAccount" value="Log Out"/>
+    }
+  }
+  else
+  {
+    @Html.ActionLink("Register/Login", "Index", "Account", null, new { @class = "btnAccount" })
+  }
+</div> *@
+<h2>If you love sushi, you'll love Chihiro's</h2>
 <div class = sideBar>
-<img class = "image2" src = "~/img/sushi4.jpg"> 
-<img class = "image3" src = "~/img/sushi2.jpg"> 
-<img class = "image2" src = "~/img/sushi3.jpg"> 
-<img class = "image3" src = "~/img/sushi1.jpg"> 
+  <img class = "image2" src = "~/img/sushi4.jpg"> 
+  <img class = "image3" src = "~/img/sushi2.jpg"> 
+  <img class = "image2" src = "~/img/sushi3.jpg"> 
+  <img class = "image3" src = "~/img/sushi1.jpg"> 
 </div>
 
 
