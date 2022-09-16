@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using System.Text;
 
 namespace Sushi.Controllers
 {
@@ -27,6 +28,37 @@ namespace Sushi.Controllers
             List<MenuItem> model = _db.MenuItems.ToList();
             return View(model);
         }
+
+        // [HttpPost, ActionName("Index")]
+        // public ActionResult SaveIsChecked(MenuItem menuItem)
+        // {
+        //     _db.Entry(menuItem).State = EntityState.Modified;
+        //     _db.SaveChanges();
+        //     return RedirectToAction("Index");
+        // }
+
+        // [HttpPost]
+        // public string Index(IEnumerable[MenuItem] menuItems)
+        // {
+        //     if (menuItems.Count(x => x.IsChecked) == 0)
+        //     {
+        //         return "You have not selected any items";
+        //     }
+        //     else
+        //     {
+        //         StringBuilder sb = new StringBuilder();
+        //         sb.Append("You selected - ");
+        //         foreach (MenuItem menuItem in menuItems)
+        //         {
+        //             if (menuItem.IsChecked)
+        //             {
+        //                 sb.Append(menuItem.MenuItemName + ", ");
+        //             }
+        //         }
+        //         sb.Remove(sb.ToString().LastIndexOf(","), 1);
+        //         return sb.ToString();
+        //     }
+        // }
 
         [Authorize]
         public ActionResult Create()

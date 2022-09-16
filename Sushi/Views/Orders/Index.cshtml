@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Sushi.Models;
+@model List<Sushi.Models.Order>;
+
+<h1>Orders</h1>
+
+@foreach (Order order in Model)
+{
+
+  @* @Html.ActionLink($"{order.OrderId}", "Details", " ", new { id = order.OrderId }, new {@class="btn btn-light"}) *@
+  @Html.ActionLink($"{order.TotalPrice}", "Details", " ", new { id = order.TotalPrice }, new {@class="btn btn-light"})
+
+  <div class="input-group mb-3">
+    @Html.Label(order.OrderId.ToString(), order.OrderId.ToString(), new{@class = "input-group-text"})
+    @Html.Label(order.subTotalPrice.ToString(), order.subTotalPrice.ToString(), new{@class = "input-group-text"})
+    @Html.Label(order.TotalPrice.ToString(), order.TotalPrice.ToString(), new{@class = "input-group-text"})
+    @Html.Label(order.ItemsCount.ToString(), order.ItemsCount.ToString(), new{@class = "input-group-text"})
+  </div>
+}

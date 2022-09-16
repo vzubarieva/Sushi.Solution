@@ -9,6 +9,8 @@ namespace Sushi.Models
         [Display(Name = "Menu item name")]
         public string MenuItemName { get; set; }
 
+        // public bool isChecked { get; set; }
+
         [Display(Name = "Menu item price")]
         public double MenuItemPrice { get; set; }
         public string UserId { get; set; } // Foreign Key
