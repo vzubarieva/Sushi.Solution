@@ -4,11 +4,12 @@
 
 @using System.Security.Claims
 
-<h2>Plese login if you are an admin</h2>
+<h2>Plese login</h2>
 <hr />
 @if (User.Identity.IsAuthenticated)
 {
-  <p>Hello @User.Identity.Name!</p>
+  <p>Wellcome to Chihiro's Sushi & Bar!</p>
+  <p>When you log in you can create an order and check your history of orders.</p>
   @using (Html.BeginForm("LogOff", "Account"))
   {
     <input type="submit" class="btn btn-default" value="Log out" />

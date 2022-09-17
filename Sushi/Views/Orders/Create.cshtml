@@ -21,7 +21,8 @@
     <div class="input-group mb-3">
       @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
       @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new{@class = "input-group-text"})
-      @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @id = item.MenuItemId})
+      @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0", @id =
+  item.MenuItemId})
     </div>
   }
 

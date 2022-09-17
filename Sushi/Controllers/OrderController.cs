@@ -12,6 +12,7 @@ using System;
 using System.Data;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace Sushi.Controllers
 {
@@ -54,28 +55,66 @@ namespace Sushi.Controllers
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
 
-            // TODO:
-            // shape of form collection:
+            // this is how form data looks like:
             // {
             //   [itemId]: [countOrdered],
-            //   2: 34,
-            //   2: 0,
+            //   2: 3,
+            //   4: 0,
+            //   5: 1,
             // }
-            //
-            // iterate over items
-            // do nothing if value is 0, it means 0 of this item were ordered
-            // create orderItems from items > 0 (do not forget to set orderId)
-            // sum all prices into one variable, assign it to both subTotalPrice and TotalPrice
-            // assign ItemsCount with count of all items wit > 0 ordered
-            // add all order items to _db
 
-            Order order = new Order
+            // create total variables
+            double subTotalPrice = 0;
+            double TotalPrice = 0;
+            int ItemsCount = 0;
+
+            Order order = new Order { UserId = currentUser.Id };
+
+            // iterate over items
+            foreach (string menuItemId in items.Keys)
             {
-                subTotalPrice = 56,
-                TotalPrice = 56,
-                ItemsCount = items.Count,
-                UserId = currentUser.Id
-            };
+                // conversion
+                StringValues menuItemCount = "";
+                items.TryGetValue(menuItemId, out menuItemCount); // value in formCollection
+                int menuItemCountInt = 0;
+                int.TryParse(menuItemCount, out menuItemCountInt); // same value but parsed into integer
+
+                // convert to int
+                int menuItemIdInt = 0;
+                int.TryParse(menuItemId, out menuItemIdInt);
+
+                // do nothing if value is 0, it means 0 of this item were ordered
+                if (menuItemCountInt > 0)
+                {
+                    ItemsCount++;
+
+                    // get menu item
+                    MenuItem menuItem = _db.MenuItems.FirstOrDefault(
+                        menuItem => menuItem.MenuItemId == menuItemIdInt
+                    );
+
+                    // create orderItems (do not forget to set orderId)
+                    OrderItem orderItem = new OrderItem
+                    {
+                        MenuItemPrice = menuItem.MenuItemPrice,
+                        MenuItemName = menuItem.MenuItemName,
+                        Count = menuItemCountInt,
+                        MenuItem = menuItem,
+                        Order = order,
+                    };
+
+                    // sum all prices into one variable, then assign it to both subTotalPrice and TotalPrice
+                    subTotalPrice += menuItem.MenuItemPrice * menuItemCountInt;
+
+                    // add all order items to _db
+                    _db.Add(orderItem);
+                }
+            }
+
+            // assign total values
+            order.subTotalPrice = subTotalPrice;
+            order.TotalPrice = subTotalPrice * 1.1;
+            order.ItemsCount = ItemsCount; // assign ItemsCount with count of all items wit > 0 ordered
 
             _db.Add(order);
 

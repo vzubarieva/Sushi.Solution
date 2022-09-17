@@ -60,19 +60,19 @@ namespace Sushi.Controllers
         //     }
         // }
 
-        [Authorize]
+        // [Authorize]
         public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(MenuItem menuItem)
+        public ActionResult Create(MenuItem menuItem)
         {
-            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var currentUser = await _userManager.FindByIdAsync(userId);
+            // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            // var currentUser = await _userManager.FindByIdAsync(userId);
             // ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
-            menuItem.User = currentUser;
+            // menuItem.User = currentUser;
             _db.MenuItems.Add(menuItem);
             _db.SaveChanges();
             return RedirectToAction("Index");
