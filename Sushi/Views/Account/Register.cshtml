@@ -6,21 +6,20 @@
 
 @model RegisterViewModel
 
-<h2>Register a New User</h2>
-
-<div class="infoBox">
+<div class="registerBox">
+  <h1>Register a New User</h1>
 
   @using (Html.BeginForm("Register", "Account", FormMethod.Post))
   {
-    @Html.LabelFor(user => user.Email)<br>
+    <h5 class = "formInfo">@Html.LabelFor(user => user.Email)<br>
     @Html.TextBoxFor(user=> user.Email, new { required = "required" })<br>
 
     @Html.LabelFor(user=> user.Password)<br>
     @Html.PasswordFor(user=> user.Password, new { required = "required" })<br>
 
     @Html.LabelFor(user=> user.ConfirmPassword)<br>
-    @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br>
+    @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br></h5>
 
-    <input id = "btn2" type="submit" value="Register" />
+    <input id = "btnAccount" type="submit" value="Register" />
   }
 </div>
