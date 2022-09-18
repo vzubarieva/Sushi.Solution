@@ -12,13 +12,32 @@
 
 <body class="bamboo">
     <div class="container">
+        <header class="pageHeader">
+            @await Html.PartialAsync("NavBar")
+        </header>
+
         <div class="row">
             <div class="col1">
-                <img class="image1" src="img/title2.png">
-                @await Html.PartialAsync("NavBar")
+                <img class="imgeNav" src="/img/logo2.png">
+                <h3 id="sideCommentBox">If you love sushi, you'll love Chihiro's!</h3>
+                @* <p> *Business Hours*
+                    <br>Fri – Sat : 11:00am – 10:00pm
+                    <br>Sun – Thur : 4:00pm – 10:00pm
+                    </p> *@
+                <div id="slider">
+                    <figure>
+                        <img src="~/img/sushi1.jpg">
+                        <img src="~/img/sushi2.jpg">
+                        <img src="~/img/sushi3.jpg">
+                        <img src="~/img/sushi4.jpg">
+                        <img src="~/img/sushi1.jpg">
+                    </figure>
+                </div>
+
+
+
             </div>
             <div class="col2">
-
                 @RenderBody()
             </div>
         </div>
