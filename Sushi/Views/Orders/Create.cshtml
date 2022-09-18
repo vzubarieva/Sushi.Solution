@@ -5,30 +5,48 @@
 @using Sushi.Models
 @model List<Sushi.Models.MenuItem>;
 
+<div class="menuBox">
+  <h1>Add a new order</h1>
+  @using (Html.BeginForm())
 
-<h1>Add a new order</h1>
-
-
-
-@using (Html.BeginForm())
-{
-
-  @foreach (MenuItem item in Model)
   {
 
-    @* @Html.ActionLink($"{item.MenuItemName}", "Details", " ", new { id = item.MenuItemId }, new {@class="btn btn-light"})
-      @Html.ActionLink($"{item.MenuItemPrice}", "Details", " ", new { id = item.MenuItemId }, new {@class="btn btn-light"}) *@
-    <div class="input-group mb-3">
-      @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
-      @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new{@class = "input-group-text"})
-      @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0", @id =
-  item.MenuItemId})
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Menu item name</th>
+            <th scope="col">Item price</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (MenuItem item in Model)
+          {
+            <tr>
+              <th scope="row">
+                @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
+
+              </th>
+              <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new{@class =
+            "input-group-text"})
+
+              </td>
+              <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0",
+            @id
+            =
+            item.MenuItemId})
+              </td>
+
+            </tr>
+
+          }
+        </tbody>
+
+      </table>
+      <input type="submit" value="Submit" class="btn btn-light" />
     </div>
+
+
   }
-
-
-
-  <input type="submit" value="Submit" class="btn btn-light" />
-}
-<div class="hstack gap-3 pt-3 mt-3 border-top border-dark">
 </div>

@@ -19,12 +19,17 @@ namespace Sushi.Controllers
             _userManager = userManager;
         }
 
-        [HttpGet("/")]
+        // [HttpGet("/")]
         public async Task<ActionResult> Index()
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
             ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
+            return View();
+        }
+
+        public ActionResult Dev()
+        {
             return View();
         }
 
