@@ -55,7 +55,7 @@ h1 {
   /* text-shadow: 1px 1px 1px rgb(244, 209, 144); */
 }
 h2 {
-  margin-top: -105px;
+  margin-top: -145px;
   margin-left: -135px;
   font-size: 30px;
   color: black;
@@ -126,9 +126,10 @@ p {
 }
 
  .imgUs {
+  margin-top: -2%;
   margin-left: -3%;
-  width: 671px;
-  height: 624px;
+  width: 721.5px;
+  height: 666px;
 }
 
  .imgMenu {
@@ -218,7 +219,7 @@ p {
  
   position:fixed;
   width: 400px;
-  height: 935px;
+  height: 665px;
   display: block;
   background:rgb(11, 11, 11) ;
   text-align: left;
@@ -268,10 +269,10 @@ p {
 
  .menuBox {
   background: rgb(121, 13, 7) ;
-  margin-top: 9.4px;
+  margin-top: -12.8px;
   align-content: center;
-  width: 113.2%;
-  height: 615px;
+  width: 121.6%;
+  height: 664px;
   display: block;
   margin-left: -16px;
   padding: 10px;
@@ -279,13 +280,13 @@ p {
 
  .accountBox {
   background: rgb(121, 13, 7) ;
-  margin-top:9.4px;
-  width:153%;
-  height: 615px;
+  margin-top:-13px;
+  width:418.3%;
+  height: 665px;
   display: block;
-  margin-left: -16px;
+  margin-left: -14px;
   text-align: center;
-  padding: 89px;
+  padding: 8px;
 }
 
  .menuItemBox {
@@ -302,19 +303,19 @@ p {
 
  .registerBox, .loginBox {
   background: rgb(121, 13, 7) ;
-  margin-top:9.4px;
-  width:150.4%;
-  height: 615px;
+  margin-top:-13px;
+  width:160.1%;
+  height: 665px;
   display: block;
-  margin-left: -16px;
+  margin-left: -14px;
   text-align: center;
   padding: 89px;
 }
 
  #aboutUs{
-  width: 90%;
+  width: 100%;
   margin-left: 33%;
-  margin-top: -75%;
+  margin-top: -70%;
   color: rgb(244, 209, 144);
   width: 50%;
   padding: 4%;
@@ -327,7 +328,7 @@ p {
 #usComment {
   width: 90%;
   margin-left: -53%;
-  margin-top: 12%;
+  margin-top: 2%;
   color: rgb(244, 209, 144);
   width: 115%;
   padding: 4%;
