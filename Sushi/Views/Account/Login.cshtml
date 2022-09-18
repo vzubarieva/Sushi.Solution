@@ -9,12 +9,12 @@
   <h1>Log in for managment options</h1>
   @using (Html.BeginForm())
   {
-    <h5 class = "formInfo">@Html.LabelFor(m => m.Email)<br>
-    @Html.TextBoxFor(m => m.Email, new { required = "required" })<br>
+    <h5 class="formInfo">@Html.LabelFor(m => m.Email)<br>
+      @Html.TextBoxFor(m => m.Email, new { required = "required" })<br>
 
-    @Html.LabelFor(m => m.Password)<br>
-    @Html.PasswordFor(m => m.Password, new { required = "required" })</h5>
+      @Html.LabelFor(m => m.Password)<br>
+      @Html.PasswordFor(m => m.Password, new { required = "required" })</h5>
 
-    <input type="submit" value="Login" id = "btnAccount" />
+    <input type="submit" value="Login" id="btnAccount" />
   }
 </div>

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using System.Text;
 
 namespace Sushi.Controllers
 {
@@ -28,19 +29,19 @@ namespace Sushi.Controllers
             return View(model);
         }
 
-        [Authorize]
+        // [Authorize]
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(_db.Customers, "CustomerId", "CustomerName");
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(MenuItem menuItem)
+        public ActionResult Create(MenuItem menuItem)
         {
-            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var currentUser = await _userManager.FindByIdAsync(userId);
-            menuItem.User = currentUser;
+            // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            // var currentUser = await _userManager.FindByIdAsync(userId);
+            // ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
+            // menuItem.User = currentUser;
             _db.MenuItems.Add(menuItem);
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -57,7 +58,6 @@ namespace Sushi.Controllers
         public ActionResult Edit(int id)
         {
             var thisMenuItem = _db.MenuItems.FirstOrDefault(menuItem => menuItem.MenuItemId == id);
-            ViewBag.CustomerId = new SelectList(_db.Customers, "CustomerId", "CustomerName");
             return View(thisMenuItem);
         }
 
@@ -90,13 +90,11 @@ namespace Sushi.Controllers
 
         public ActionResult Menu()
         {
-            
             return View();
         }
 
         public ActionResult AboutUs()
         {
-            
             return View();
         }
 
