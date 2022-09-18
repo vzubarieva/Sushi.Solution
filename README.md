@@ -36,7 +36,7 @@
 * _Run the command $ dotnet build_
 * _Run the command $ dotnet run_
 * _In your web browser, navigate to "http://localhost:5000"_
-* _The browser should now display the web application for the user to interact with_"
+* _The browser should now display the web application for the user to interact with_
 
 ## Known Bugs
 
