@@ -14,8 +14,11 @@
   <div class="input-group mb-3">
     @Html.ActionLink($"{order.OrderId}", "Details", " ", new { id = order.OrderId }, new {@class="btn btn-light"})
     @* @Html.Label(order.OrderId.ToString(), order.OrderId.ToString(), new{@class = "input-group-text"}) *@
+    <p>Items quantity</p>
     @Html.Label(order.ItemsCount.ToString(), order.ItemsCount.ToString(), new{@class = "input-group-text"})
+    <p>Sub total price</p>
     @Html.Label(order.subTotalPrice.ToString(), order.subTotalPrice.ToString(), new{@class = "input-group-text"})
+    <p>Total price</p>
     @Html.Label(order.TotalPrice.ToString("0.##"), order.TotalPrice.ToString("0.##"), new{@class = "input-group-text"})
   </div>
 }
