@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sushi.Models;
 
 namespace Sushi.Migrations
 {
     [DbContext(typeof(SushiContext))]
-    partial class SushiContextModelSnapshot : ModelSnapshot
+    [Migration("20220915055301_changed_tables")]
+    partial class changed_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,6 +211,25 @@ namespace Sushi.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Sushi.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("CustomerId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("Sushi.Models.MenuItem", b =>
                 {
                     b.Property<int>("MenuItemId")
@@ -218,13 +239,18 @@ namespace Sushi.Migrations
                     b.Property<string>("MenuItemName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<double>("MenuItemPrice")
-                        .HasColumnType("double");
+                    b.Property<int>("MenuItemPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderItemId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("MenuItemId");
+
+                    b.HasIndex("OrderItemId");
 
                     b.HasIndex("UserId");
 
@@ -237,17 +263,8 @@ namespace Sushi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ItemsCount")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("double");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<double>("subTotalPrice")
-                        .HasColumnType("double");
 
                     b.HasKey("OrderId");
 
@@ -260,26 +277,13 @@ namespace Sushi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
                     b.Property<int>("MenuItemId")
                         .HasColumnType("int");
-
-                    b.Property<string>("MenuItemName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<double>("MenuItemPrice")
-                        .HasColumnType("double");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.HasKey("OrderItemId");
-
-                    b.HasIndex("MenuItemId");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderItems");
                 });
@@ -335,8 +339,21 @@ namespace Sushi.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Sushi.Models.Customer", b =>
+                {
+                    b.HasOne("Sushi.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Sushi.Models.MenuItem", b =>
                 {
+                    b.HasOne("Sushi.Models.OrderItem", null)
+                        .WithMany("MenuItems")
+                        .HasForeignKey("OrderItemId");
+
                     b.HasOne("Sushi.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
@@ -346,26 +363,7 @@ namespace Sushi.Migrations
 
             modelBuilder.Entity("Sushi.Models.OrderItem", b =>
                 {
-                    b.HasOne("Sushi.Models.MenuItem", "MenuItem")
-                        .WithMany()
-                        .HasForeignKey("MenuItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Sushi.Models.Order", "Order")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("MenuItem");
-
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("Sushi.Models.Order", b =>
-                {
-                    b.Navigation("OrderItems");
+                    b.Navigation("MenuItems");
                 });
 #pragma warning restore 612, 618
         }

@@ -103,13 +103,15 @@ p {
 }
 
 #imgHome {
-  margin-top: 3%;
-  width: 651px;
+  /* margin-top: 3%; */
+  width: 100%;
+  height: 350px;
+  margin-top: 5px;
 }
 
  .imgeNav {
   margin-top: 12px;
-  width: 65%;
+  width: 70%;
   margin-left: 68px;
   border-radius: 5px;
   position: relative;
@@ -207,7 +209,7 @@ p {
   margin-top: 52px;
  
   position:fixed;
-  width: 33%;
+  width: 400px;
   height: 615px;
   display: block;
   background:rgb(11, 11, 11) ;
@@ -217,8 +219,8 @@ p {
 
  .col2 {
   /* background: rgb(121, 13, 7) ; */
-  margin-left: 43.5%;
-  padding: 2% ;
+  margin-left: 45%;
+  /* padding: 2% ; */
   padding-top: 5%;
   text-align: left;
   font-weight: bold;
@@ -242,16 +244,16 @@ p {
  #commentBox {
   /* background: rgb(121, 13, 7) ; */
   background: black ;
-  margin-left: -0px;
-  margin-top:8px;
+  /* margin-left: -0px; */
+  /* margin-top:8px; */
   align-content: center;
-  width: 99.9%;
+  width: 100%;
   height: 47px;
   letter-spacing: 2px;
   display: block;
   color: rgb(244, 209, 144);
   text-shadow: 2px 2px 2px black;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
  .menuBox {
@@ -374,7 +376,7 @@ p {
 /* google map */
 .mapouter {
   text-align:right;
-  margin-top: 1%;
+  /* margin-top: 1%; */
   border: 1px solid black; 
 }
 

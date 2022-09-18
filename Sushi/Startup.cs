@@ -12,7 +12,9 @@ using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
+using Sushi.Controllers;
 using Sushi.Models;
 
 namespace Sushi
@@ -56,6 +58,9 @@ namespace Sushi
                     options.Password.RequiredUniqueChars = 0;
                 }
             );
+            services
+                .AddLogging(configure => configure.AddConsole())
+                .AddTransient<OrdersController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

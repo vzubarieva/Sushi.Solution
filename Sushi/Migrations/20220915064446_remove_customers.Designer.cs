@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sushi.Models;
 
 namespace Sushi.Migrations
 {
     [DbContext(typeof(SushiContext))]
-    partial class SushiContextModelSnapshot : ModelSnapshot
+    [Migration("20220915064446_remove_customers")]
+    partial class remove_customers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -243,8 +245,8 @@ namespace Sushi.Migrations
                     b.Property<double>("TotalPrice")
                         .HasColumnType("double");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.Property<double>("subTotalPrice")
                         .HasColumnType("double");
@@ -258,9 +260,6 @@ namespace Sushi.Migrations
                 {
                     b.Property<int>("OrderItemId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("Count")
                         .HasColumnType("int");
 
                     b.Property<int>("MenuItemId")
@@ -352,15 +351,13 @@ namespace Sushi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Sushi.Models.Order", "Order")
+                    b.HasOne("Sushi.Models.Order", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("MenuItem");
-
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Sushi.Models.Order", b =>

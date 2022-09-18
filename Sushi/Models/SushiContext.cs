@@ -6,8 +6,9 @@ namespace Sushi.Models
 {
     public class SushiContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         public SushiContext(DbContextOptions options) : base(options) { }
 
