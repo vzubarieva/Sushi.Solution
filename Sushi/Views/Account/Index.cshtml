@@ -6,14 +6,14 @@
 
   @using System.Security.Claims
 
-
+  <h1>Please login</h1>
   @if (User.Identity.IsAuthenticated)
   {
-    <h1>Please login if you are an admin</h1>
-    <p class="formInfo">Hello @User.Identity.Name!</p>
+    <h1 class="formInfo">Hello @User.Identity.Name!</h1>
     @using (Html.BeginForm("LogOff", "Account"))
     {
-      <input type="submit" class="btn" value="Log out" />
+      <input type="submit" id="btnAccount" class="btn" value="Log out" />
+
     }
     @* <img class ="image6" src = "~/img/sushi6.png"> *@
 
@@ -24,7 +24,5 @@
 
     @Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })
     @Html.ActionLink("Login", "Login", null, null, new { @class = "pageLink" })
-
-
   }
 </div>
