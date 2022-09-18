@@ -11,6 +11,7 @@
 </head>
 
 <body class="bamboo">
+<<<<<<< HEAD
     @* <div class="container"> *@
         <header class="pageHeader">
             @await Html.PartialAsync("NavBar")
@@ -30,15 +31,34 @@
                         <img src="~/img/sushi1.jpg">
                     </figure>
                 </div>
+=======
+    <header class = "pageHeader">
+        @await Html.PartialAsync("NavBar")
+    </header>
+<div class= "container">
+>>>>>>> b07c82e6aae660ddb6dcdea57720185faf85bc02
 
 
+    <div class = "row">
+        <div class="col1" >
+            <img  class = "imgeNav" src = "/img/logo2.png" >
+            <h3 id = "sideCommentBox">If you love sushi, you'll love Chihiro's!</h3>        
 
+            <div id ="slider">
+                <figure>
+                    <img   src = "~/img/sushi1.jpg" > 
+                    <img   src = "~/img/sushi2.jpg" > 
+                    <img   src = "~/img/sushi3.jpg" > 
+                    <img   src = "~/img/sushi4.jpg" > 
+                    <img   src = "~/img/sushi1.jpg" > 
+                </figure>
             </div>
-            <div class="col2">
-                @RenderBody()
-            </div>
+        </div> 
+        <div class="col2">
+            @RenderBody()
         </div>
-    </div>
+    </div> 
+
 
 </body>
 
