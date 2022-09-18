@@ -2,19 +2,19 @@
   
   @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btnHome" })
 
-  @Html.ActionLink("AboutUs", "AboutUs", "MenuItems", null, new { @class = "btn" })
+  @Html.ActionLink("AboutUs", "AboutUs", "MenuItems", null, new { @class = "btnNav" })
 
-  @Html.ActionLink("Menu", "Menu", "MenuItems", null, new { @class = "btn" })
+  @Html.ActionLink("Menu", "Menu", "MenuItems", null, new { @class = "btnNav" })
 
-  @Html.ActionLink("Order Online", "Index", "MenuItems",null, new { @class = "btn" })
+  @Html.ActionLink("Order Online", "Index", "MenuItems",null, new { @class = "btnNav" })
   
-  @Html.ActionLink("Customer", "Index", "Customers", null, new { @class = "btn" })
+  @Html.ActionLink("Customer", "Index", "Customers", null, new { @class = "btnNav" })
   
   @* <h5 class = "linkWordColor">@Html.ActionLink("Create/Login Account", "Index", "Account")</h5> *@
-  @Html.ActionLink("Account", "Index", "Account")
+  @Html.ActionLink("Account", "Index", "Account", null, new { @class = "btnNav" })
   
 
-  @if (User.Identity.IsAuthenticated)
+  @* @if (User.Identity.IsAuthenticated)
     {
       @using (Html.BeginForm("LogOff", "Account"))
       {
@@ -25,5 +25,5 @@
     {
       @Html.ActionLink("Register", "Register", "Account", new {}, new {@class ="btn"})
       @Html.ActionLink("Log in", "Login", "Account", new {}, new {@class ="btn"})
-    }
+    } *@
 </nav>

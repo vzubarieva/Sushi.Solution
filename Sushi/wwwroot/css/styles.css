@@ -42,12 +42,12 @@
   /* text-shadow: 1px 1px 1px rgb(244, 209, 144); */
 }
  h2 {
-  margin-top: -85px;
+  margin-top: -125px;
   font-size: 30px;
   color: black;
   font-weight: bold;
-  text-align: center;
-
+  text-align: left;
+  text-shadow: 1px 1px 1px rgb(244, 209, 144);
 }
 
  h3 {
@@ -57,6 +57,17 @@
   font-weight: bold;
   text-align: center;
 
+}
+
+h4 {
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 2px;
+  margin-left: -40px;
+  font-size: 16px;
+  color: rgb(244, 209, 144);
+  text-align: left;
+ 
+  font-style: oblique;
 }
 
  h5 {
@@ -79,6 +90,7 @@
 
  p {
   margin-top: 23px;
+  margin-left: 5px;
   font-size: 15px;
   color: rgb(244, 209, 144);
   font-weight: bold;
@@ -99,7 +111,8 @@
 }
 
  .imgUs {
-  width: 651px;
+  margin-left: -3%;
+  width: 671px;
   height: 624px;
 }
 
@@ -121,12 +134,13 @@
   color: rgb(4, 0, 0);
 }
 
- .btn {
+ .btnNav {
   margin-top: 5px;
+  margin-right: 25px;
   padding: 1px;
-  font-weight: bolder;
   font-size: 20px;
   color: rgb(244, 209, 144);
+  text-shadow: 1px 1px 1px black;
 }
 
  .formInfo {
@@ -149,7 +163,7 @@
 }
 
  .btnHome {
-  margin-left: 15px;
+  margin-right: 25px;
   margin-top: 12px;
   background-color:rgb(244, 209, 144);
   padding: 2px ; 
@@ -196,6 +210,19 @@
   font-weight: bold;
 } 
 
+ #commentBox {
+  background: rgb(121, 13, 7) ;
+  margin-top: 9.4px;
+  align-content: center;
+  width: 100%;
+  height: 55px;
+  letter-spacing: 2px;
+  display: block;
+  color: rgb(244, 209, 144);
+  text-shadow: 2px 2px 2px black;
+  padding: 10px;
+}
+
  .menuBox {
   background: rgb(121, 13, 7) ;
   margin-top: 9.4px;
@@ -218,7 +245,7 @@
   padding: 89px;
 }
 
-.menuItemBox {
+ .menuItemBox {
   /* background: rgb(121, 13, 7) ; */
   margin-top:9.4px;
   width:163.7%;
@@ -242,15 +269,16 @@
 }
 
  #aboutUs{
-  width: 80%;
-  margin-left: 38%;
+  width: 90%;
+  margin-left: 33%;
   margin-top: -75%;
   color: rgb(244, 209, 144);
   width: 50%;
-  padding: 4% ;
-  font-size: 15px ;
-  text-align: left;
-  font-style: oblique;
+  padding: 4%;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 1px;
+  /* text-align: left; */
+  /* font-style: oblique; */
 }
 
 /* sliding img home */
