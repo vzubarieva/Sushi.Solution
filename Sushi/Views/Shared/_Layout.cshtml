@@ -11,13 +11,14 @@
 </head>
 
 <body class="bamboo">
-<div class= "container">
     <header class = "pageHeader">
         @await Html.PartialAsync("NavBar")
     </header>
+<div class= "container">
+
 
     <div class = "row">
-        <div class="col1" >
+        <div class="col-4" >
             <img  class = "imgeNav" src = "/img/logo2.png" >
     <h3 id = "sideCommentBox">If you love sushi, you'll love Chihiro's!</h3>        
  @* <p> *Business Hours*
@@ -37,7 +38,7 @@
             
             
         </div>
-        <div class="col2" >
+        <div class="col-8" >
             @RenderBody()
         </div>  
     </div> 
