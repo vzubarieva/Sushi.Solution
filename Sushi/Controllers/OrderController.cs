@@ -22,17 +22,10 @@ namespace Sushi.Controllers
         private readonly SushiContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        // private readonly ILogger<OrdersController> _logger;
-
-        public OrdersController(
-            SushiContext db,
-            UserManager<ApplicationUser> userManager
-        // ILogger<OrdersController> logger
-        )
+        public OrdersController(SushiContext db, UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
             _db = db;
-            // _logger = logger;
         }
 
         public ActionResult Index()
