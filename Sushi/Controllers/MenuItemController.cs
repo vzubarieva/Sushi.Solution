@@ -29,7 +29,6 @@ namespace Sushi.Controllers
             return View(model);
         }
 
-        // [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -38,10 +37,6 @@ namespace Sushi.Controllers
         [HttpPost]
         public ActionResult Create(MenuItem menuItem)
         {
-            // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            // var currentUser = await _userManager.FindByIdAsync(userId);
-            // ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
-            // menuItem.User = currentUser;
             _db.MenuItems.Add(menuItem);
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -61,13 +56,9 @@ namespace Sushi.Controllers
             return View(thisMenuItem);
         }
 
-        [Authorize]
         [HttpPost]
         public async Task<ActionResult> Edit(MenuItem menuItem)
         {
-            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var currentUser = await _userManager.FindByIdAsync(userId);
-            menuItem.User = currentUser;
             _db.Entry(menuItem).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");

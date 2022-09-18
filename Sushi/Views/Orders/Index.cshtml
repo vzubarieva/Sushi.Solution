@@ -6,36 +6,39 @@
 @model List<Sushi.Models.Order>;
 
 <div class="menuBox">
-<h1>Orders</h1>
+  <h1>Orders</h1>
 
-<div class="card">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Order</th>
-        <th scope="col">Items quantity</th>
-        <th scope="col">Sub total price</th>
-        <th scope="col">Total price</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach (Order order in Model)
-      {
+  <div class="card">
+    <table class="table">
+      <thead>
         <tr>
-          <th scope="row">
-            @Html.ActionLink($"{order.OrderId}", "Details", " ", new { id = order.OrderId }, new {@class="btn btn-light"})
-          </th>
-          <td> @Html.Label(order.ItemsCount.ToString(), order.ItemsCount.ToString(), new{@class = "input-group-text"})
-          </td>
-          <td> @Html.Label(order.subTotalPrice.ToString(), order.subTotalPrice.ToString(), new{@class =
-          "input-group-text"})
-          </td>
-          <td> @Html.Label(order.TotalPrice.ToString("0.##"), order.TotalPrice.ToString("0.##"), new{@class =
-          "input-group-text"})
-          </td>
+          <th scope="col">Order</th>
+          <th scope="col">Items quantity</th>
+          <th scope="col">Sub total price</th>
+          <th scope="col">Total price</th>
         </tr>
-      }
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        @{
+          int k = 1;
+        }
+        @foreach (Order order in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.ActionLink($"{k++}", "Details", new { id = order.OrderId })
+            </th>
+            <td> @Html.Label(order.ItemsCount.ToString(), order.ItemsCount.ToString(), new{@class = "input-group-text"})
+            </td>
+            <td> @Html.Label(order.subTotalPrice.ToString(), $"${order.subTotalPrice.ToString()}", new{@class =
+            "input-group-text"})
+            </td>
+            <td> @Html.Label(order.TotalPrice.ToString("0.##"), $"${order.TotalPrice.ToString("0.##")}", new{@class =
+            "input-group-text"})
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>
