@@ -27,4 +27,9 @@
     @Html.ActionLink("Register", "Register", "Account", new {}, new {@class ="btn"})
     @Html.ActionLink("Log in", "Login", "Account", new {}, new {@class ="btn"})
     } *@
+  
+  @if (User.Identity.IsAuthenticated && User.Identity.Name == "admin")
+  {
+    
+  }
 </nav>

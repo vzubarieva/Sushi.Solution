@@ -11,9 +11,7 @@
 }
 
 .container {
-  margin-left: 25px;
   width: 100%;
-  
 }
 
 .pageHeader{
@@ -36,10 +34,13 @@
   margin-bottom: 10px;
 }
 
-#footer {
-  position: relative;
+footer {
   bottom: 0;
   width: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: rgb(121, 13, 7);
+  position: absolute;
 }
 
 .row {
@@ -134,7 +135,7 @@ p {
  .imgeNav {
   margin-top: 12px;
   width: 70%;
-  margin-left: 68px;
+  margin-left: 45px;
   border-radius: 5px;
   position: relative;
 }
@@ -163,22 +164,7 @@ p {
  box-sizing: border-box;
 }
 
-.container {
-  width: 350px;
-  height: 250px;
-  margin: 20 px auto;
-  display: inline-block;
-} 
-
- /* .container {
-  min-height: 100vh; /* will cover the 100% of viewport */
-  /* overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 100px; /* height of your footer */
- /* } */
-
- .main-nav a:hover, #btn2:hover {
+.main-nav a:hover, #btn2:hover {
   color: rgb(4, 0, 0);
 }
 
