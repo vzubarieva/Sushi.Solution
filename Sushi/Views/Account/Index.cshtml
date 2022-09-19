@@ -9,7 +9,7 @@
   <h1>Please login</h1>
   @if (User.Identity.IsAuthenticated)
   {
-    <h1 class="formInfo">Hello @User.Identity.Name!</h1>
+    <h5 >Hello @User.Identity.Name!</h5>
     @using (Html.BeginForm("LogOff", "Account"))
     {
       <input type="submit" id="btnAccount" class="btn" value="Log out" />
@@ -22,7 +22,7 @@
   {
     <h1>Account</h1>
 
-    @Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })
+    <h5>@Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })</h5>
     @Html.ActionLink("Login", "Login", null, null, new { @class = "pageLink" })
   }
 </div>
