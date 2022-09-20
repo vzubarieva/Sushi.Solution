@@ -20,6 +20,16 @@ body {
   text-align: center; 
 }
 
+ul {
+  list-style-type: circle;
+  border: 2px solid rgb(240, 111, 111);
+  background-color: rgb(121, 13, 7);
+}
+li {
+  margin: 5px;
+  background-color: lightyellow;
+}
+
 .pageHeader{
   position:fixed;
   margin-top: -11px;
@@ -125,8 +135,8 @@ h5 {
 }
 
 h6 {
-  margin-top: 35px;
-  font-size: 20px;
+  margin-top: -120px;
+  font-size: 30px;
   color: rgb(176, 10, 10);
   font-weight: bold;
   text-align: center;
@@ -162,7 +172,7 @@ p {
   .col2 {
     width:  60%;
     padding: 1%  ; 
-    overflow: hidden;
+    /* overflow: hidden; */
     font-weight: bold;
   }
 
@@ -268,6 +278,15 @@ p {
   display: block;
   padding: 10px;
 }
+.orderBox  {
+  background: rgb(121, 13, 7) ;
+  margin-top: 28px;
+  align-content: center;
+  width: 100%;
+  height: 900px;
+  display: block;
+  padding: 10px;
+}
 
 .imgUs {
   margin-top: 318px;
@@ -301,12 +320,29 @@ p {
 .card {
   margin-top: 5px;
   text-shadow: 1px 1px 1px black;
+<<<<<<< HEAD
   font-size: 20px;
+=======
+  font-size: 15px;
+
+>>>>>>> cbb47a68a49d8fa6d3044bfc58d9605a3cefb0b5
   background-color: rgb(244, 209, 144);
 }
 
 .btn {
   margin-top: 6%;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(244, 209, 144);
+  width: 40%;
+  background-color: black; 
+  letter-spacing: 5px;
+}
+
+.btn2 {
+
+  margin-top: 2%;
   padding: 4px;
   font-weight: bold;
   font-size: 20px;
@@ -333,5 +369,15 @@ p {
   .imgFish2 {
     margin-top: 45px;
     width: 50%;
+  }
+
+  #teamInfo {
+    margin-top: 200px;
+  }
+
+  .imgTeam {
+    margin-top: 40px;
+    width: 100%;
+    padding: 2px;
   }
 

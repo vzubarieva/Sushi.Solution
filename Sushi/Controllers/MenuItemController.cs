@@ -56,13 +56,13 @@ namespace Sushi.Controllers
             return View(thisMenuItem);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Edit(MenuItem menuItem)
-        {
-            _db.Entry(menuItem).State = EntityState.Modified;
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        // [HttpPost]
+        // public async Task<ActionResult> Edit(MenuItem menuItem)
+        // {
+        //     _db.Entry(menuItem).State = EntityState.Modified;
+        //     _db.SaveChanges();
+        //     return RedirectToAction("Index");
+        // }
 
         public ActionResult Delete(int id)
         {

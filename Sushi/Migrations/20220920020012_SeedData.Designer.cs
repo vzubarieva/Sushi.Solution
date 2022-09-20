@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sushi.Models;
 
 namespace Sushi.Migrations
 {
     [DbContext(typeof(SushiContext))]
-    partial class SushiContextModelSnapshot : ModelSnapshot
+    [Migration("20220920020012_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -290,6 +292,54 @@ namespace Sushi.Migrations
                         {
                             MenuItemId = 11,
                             MenuItemName = "Fillet of madai",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 12,
+                            MenuItemName = "Fillet of tomago",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 13,
+                            MenuItemName = "Fillet of inari",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 14,
+                            MenuItemName = "Fillet of madai",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 15,
+                            MenuItemName = "Fillet of tomago",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 16,
+                            MenuItemName = "Fillet of suzuki",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 17,
+                            MenuItemName = "Fillet of unagi",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 18,
+                            MenuItemName = "Fillet of ebi",
+                            MenuItemPrice = 6.0
+                        },
+                        new
+                        {
+                            MenuItemId = 19,
+                            MenuItemName = "Fillet of ika",
                             MenuItemPrice = 6.0
                         });
                 });
