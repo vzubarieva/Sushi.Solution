@@ -27,11 +27,16 @@
 * _Using the command $ cd Sushi, navigate to the Sushi project directory_
 * _Within the Sushi project directory, create a file called appsettings.json_
 * _Add the following code to the new appsettings.json file:_ 
-  {
-    "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=sushi;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
-    }
+
+```
+{
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=sun_roberts;uid=root;pwd=[YOUR-PASSWORD];"
   }
+}
+
+``` 
+
 * _Run the command $ dotnet ef database update_
 * _Run the command $ dotnet build_
 * _Run the command $ dotnet run_
