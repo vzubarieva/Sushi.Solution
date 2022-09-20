@@ -5,50 +5,48 @@
 @using Sushi.Models
 @model List<Sushi.Models.MenuItem>;
 
-<div class="sideBox">
+<div class="orderBox">
   <h1>Add a New Order</h1>
 
   @using (Html.BeginForm())
   {
-  <div class="card">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Menu item name</th>
-          <th scope="col">Item price</th>
-          <th scope="col">Quantity</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        @foreach (MenuItem item in Model)
-        {
-
+    <div class="card">
+      <table class="table">
+        <thead>
           <tr>
-            <th scope="row">
-              @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
-            </th>
-
-            <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new{@class =
-          "input-group-text"})
-            </td>
-
-            <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0",
-          @id
-          =
-          item.MenuItemId})
-            </td>
-
+            <th scope="col">Menu item name</th>
+            <th scope="col">Item price</th>
+            <th scope="col">Quantity</th>
           </tr>
+        </thead>
 
-        }
-      </tbody>
+        <tbody>
+          @foreach (MenuItem item in Model)
+          {
 
-    </table>
+            <tr>
+              <th scope="row">
+                @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
+              </th>
+
+              <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new{@class =
+            "input-group-text"})
+              </td>
+
+              <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0",
+            @id
+            =
+            item.MenuItemId})
+              </td>
+
+            </tr>
+
+          }
+        </tbody>
+
+      </table>
     </div>
-    <input type="submit" value="Place Order" class="btn" />
 
-
-
+    <input type="submit" value="Place Order" class="btn2" />
   }
 </div>

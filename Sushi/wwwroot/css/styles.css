@@ -187,7 +187,7 @@ p {
     /* background-color: rgb(121, 13, 7); */
     /* background-image: linear-gradient(90deg, rgb(35, 15, 133), rgb(172, 165, 233), rgb(35, 15, 133)); */
     padding: 1%  ; 
-    overflow: hidden;
+    /* overflow: hidden; */
     font-weight: bold;
   }
 
@@ -296,6 +296,15 @@ p {
   display: block;
   padding: 10px;
 }
+.orderBox  {
+  background: rgb(121, 13, 7) ;
+  margin-top: 28px;
+  align-content: center;
+  width: 100%;
+  height: 900px;
+  display: block;
+  padding: 10px;
+}
 
 .imgUs {
   margin-top: 318px;
@@ -353,6 +362,18 @@ p {
 .btn {
 
   margin-top: 6%;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(244, 209, 144);
+  width: 40%;
+  background-color: black; 
+  letter-spacing: 5px;
+}
+
+.btn2 {
+
+  margin-top: 2%;
   padding: 4px;
   font-weight: bold;
   font-size: 20px;
