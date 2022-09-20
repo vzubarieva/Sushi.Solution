@@ -296,7 +296,7 @@ p {
  .menuBox {
   background: rgb(121, 13, 7) ;
   align-content: center;
-  width: 113.2%;
+  width: 120%;
   height: 615px;
   display: block;
   padding: 10px;
@@ -329,7 +329,7 @@ p {
   width:150.4%;
   height: 615px;
   display: block;
-  margin-left: -16px;
+  /* margin-left: -16px; */
   text-align: center;
   padding: 89px;
 }
