@@ -5,46 +5,15 @@
 
 <img id="imgHome" src="~/img/inside.png">
 
-<h5 id="commentBox"> *Business Hours*
+<h5 id="hourBox"> *Business Hours*
   <br>Fri–Sat: 11:00am – 10:00pm *
   Sun–Thur: 4:00pm – 10:00pm
 </h5>
-@* <h3 id = "commentBox">If you love sushi, you'll love Chihiro's</h3> *@
 
 <div class="mapouter">
-  <iframe width="700" height="550" id="gmap_canvas"
+  <iframe width="300" height="550" id="gmap_canvas"
     src="https://maps.google.com/maps?q=520%20SW%206th%20Ave%20Suite%20300,%20Portland,%20OR%2097204&t=&z=13&ie=UTF8&iwloc=&output=embed"
     frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
   </iframe>
 </div>
 
-
-
-@* <div class = "topBar">
-  @if (User.Identity.IsAuthenticated)
-  {
-
-  <h2>Welcome @User.Identity.Name !</h2>
-
-  @using (Html.BeginForm("LogOff", "Account"))
-  {
-  <input type="submit" class="btnAccount" value="Log Out"/>
-  }
-  }
-  else
-  {
-  @Html.ActionLink("Register/Login", "Index", "Account", null, new { @class = "btnAccount" })
-  }
-  </div> *@
-
-
-
-@* <div id ="slider">
-  <figure>
-  <img src = "~/img/sushi1.jpg" >
-  <img src = "~/img/sushi2.jpg" >
-  <img src = "~/img/sushi3.jpg" >
-  <img src = "~/img/sushi4.jpg" >
-  <img src = "~/img/sushi1.jpg" >
-  </figure>
-  </div> *@

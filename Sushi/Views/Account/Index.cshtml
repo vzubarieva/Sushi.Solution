@@ -2,27 +2,26 @@
   Layout = "_Layout";
 }
 
-<div class="accountBox ">
+<div class="sideBox ">
 
   @using System.Security.Claims
 
-  <h1>Please login</h1>
+  <h1>ACCOUNT</h1>
   @if (User.Identity.IsAuthenticated)
   {
-    <h1 class="formInfo">Hello @User.Identity.Name!</h1>
+    <h5 >Hello @User.Identity.Name!</h5>
     @using (Html.BeginForm("LogOff", "Account"))
     {
       <input type="submit" id="btnAccount" class="btn" value="Log out" />
 
     }
-    @* <img class ="image6" src = "~/img/sushi6.png"> *@
 
   }
   else
   {
-    <h1>Register or Login to Your Account</h1>
 
-    @Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })
+    <h5>@Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })</h5>
     @Html.ActionLink("Login", "Login", null, null, new { @class = "pageLink" })
   }
+   <img class ="imgFish2" src = "~/img/fish3.png">
 </div>
