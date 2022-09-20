@@ -260,37 +260,9 @@ p {
   }
 
 #imgHome {
-  /* margin-top: 3%; */
-  width: 700px;
-  height: 350px;
-  /* margin-top: 5px; */
-}
-
- .imgeNav {
-  margin-top: 12px;
-  width: 70%;
-  margin-left: 68px;
-  border-radius: 5px;
-  position: relative;
-}
-
- .imgUs {
-  margin-left: -3%;
-  margin-top: -13px;
-  width: 721.5px;
-  height: 934px;
-}
-
- .imgMenu {
-  margin-top: 4%;
-  margin-left: 6%;
-  width: 585px;
-  border-radius: 5px;
-}
-
- .main-nav  {
-  padding: 2px;
-  font-weight: bolder;
+  /* width: 700px;
+  height: 350px; */
+  margin-top: 28px;
   width: 100%;
 }
 
