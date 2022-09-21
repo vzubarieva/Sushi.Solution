@@ -14,39 +14,28 @@ body {
   text-align: center; 
 }
 
+.pageHeader {
+  position:fixed;
+  float:left; 
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 32px;
+  background-image: linear-gradient(90deg,rgb(121, 13, 7), rgb(240, 111, 111), rgb(121, 13, 7));
+  align-content: center;
+  font-weight: bold;
+}
+
 .container {
   margin: auto;
   width: 100%; 
   text-align: center; 
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
-  border: 2px solid rgb(240, 111, 111);
-  background-color: rgb(121, 13, 7);
-}
-li {
-  margin: 5px;
-  background-color: lightyellow;
-}
-
-.pageHeader {
-  position:fixed;
-  margin-top: -11px;
-  float:left; 
-  display: block;
-  width: 100%;
-  height: 52px;
-  background-image: linear-gradient(90deg,rgb(121, 13, 7), rgb(240, 111, 111), rgb(121, 13, 7));
-  align-content: center;
-  font-weight: bold;
-}
-
+/* NavBar */
 .main-nav {
-  font-weight: bold;
   width: 100%;
-  margin-top: 11px;
+  margin-top: 4px;
 }
 
 .main-nav a:hover, #btn2:hover{
@@ -57,190 +46,134 @@ li {
 .btnNav {
   letter-spacing: 1px;
   padding: 8px;
-  font-size: 20px;
+  font-size: 14px;
   color: rgb(244, 209, 144);
   text-shadow: 1px 1px 1px black;
 }
 
 .row {
+  margin-left: -.1%;
   width: 100%;
-  margin-left: 1px;
-  margin-top: 1%;
   text-align: center; 
-  border: 13px solid rgb(121, 13, 7);
+  border: 8px solid rgb(121, 13, 7);
 }
-
+  
 .col1 {
-  width: 40%;
+  width: 39%;
+  margin-left: -0.1%;
   background-color: black;
-  border-right: 13px solid rgb(121, 13, 7);
-  padding: 1%; 
+  border-right: solid 5px rgb(121, 13, 7);
+  padding: .5%; 
   text-align: center;
   font-weight: bold;
 }
 
 .col2 {
-  width:  60%;
+  width:  61.1%;
   padding: 1%  ; 
   overflow: hidden;
-  font-weight: bold;
 }
 
-h2 {
-  margin-top:-845px;
-  margin-left: -140px;
-  color: rgb(244, 209, 144);
-  text-shadow: 2px 2px 2px black;
-  letter-spacing: 3px;
-  font-size: 35px;
-  font-weight: bold;
+/* Right side box */
+.sideBox {
+  background: rgb(121, 13, 7) ;
+  margin-top: 23px;
+  align-content: center;
+  width: 100%;
+  height: 700px;
+  display: block;
+  padding: 10px;
 }
 
-h1 {
-  margin-top: 3px;
-  text-align: center;
+/* Left side box */
+.imgLogo {
+  margin-top: 30px;
+  width: 100%;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+#sideCommentBox {
+  background: rgb(121, 13, 7) ;
+  align-content: center;
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: 2px;
+  display: block;
   color: rgb(244, 209, 144);
   text-shadow: 2px 2px 2px black;
-  letter-spacing: 3px;
-  font-size: 30px;
-  font-weight: bold;
+  padding: 10px;
 }
 
 h3 {
   margin-top: 9px;
-  font-size: 20px;
-  color: black;
+  font-size: 18px;
   font-weight: bold;
-  text-align: center;
 }
 
-h4 {
-  text-shadow: 1px 1px 1px  black;
-  letter-spacing: 2px;
+/* sliding img */
+#slider {
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
+}
+#slider figure img {
+  float: left;
+  width: 20%;
+}
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
 
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: rgb(244, 209, 144);
-  text-align: center;
-  font-style: oblique;
+/* Home Index */
+#imgHome {
+  margin-top: 24px;
+  width: 100%;
 }
 
 h5 {
-  font-size: 25px;
-  color: rgb(244, 209, 144);
-  text-align: center;
-  font-weight: bold;
-  font-style: normal;
-}
-
-p {
-  margin-top: 29px;
   font-size: 15px;
   color: rgb(244, 209, 144);
-  font-weight: bold;
   text-align: center;
-  font-style: oblique;
-}
-
-.row {
-    width: 100%;
-    margin-left: 1px;
-    margin-top: 1%;
-    text-align: center; 
-    border: 13px solid rgb(121, 13, 7);
-  
-  }
-  
-  .col1 {
-    width: 40%;
-    background-color: black;
-    padding: 1%; 
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .col2 {
-    width:  60%;
-    padding: 1%  ; 
-    overflow: hidden;
-    font-weight: bold;
-  }
-
-  .imgLogo {
-    margin-top: 40px;
-    width: 100%;
-    padding: 2px;
-    border-radius: 5px;
-  }
-  
-  #sideCommentBox {
-    background: rgb(121, 13, 7) ;
-    margin-top: 20px;
-    align-content: center;
-    width: 100%;
-    font-size: 21px;
-    letter-spacing: 2px;
-    display: block;
-    color: rgb(244, 209, 144);
-    text-shadow: 2px 2px 2px black;
-    padding: 12px;
-  }
-  
-  /* sliding img */
-  #slider {
-    margin-top: 20px;
-    width: 100%;
-    overflow: hidden;
-  }
-  #slider figure {
-    position: relative;
-    width: 500%;
-    margin: 0;
-    left: 0;
-    animation: 20s slider infinite;
-  }
-  #slider figure img {
-    float: left;
-    width: 20%;
-  }
-  @keyframes slider {
-    0% {
-      left: 0;
-    }
-    20% {
-      left: 0;
-    }
-    25% {
-      left: -100%;
-    }
-    45% {
-      left: -100%;
-    }
-    50% {
-      left: -200%;
-    }
-    70% {
-      left: -200%;
-    }
-    75% {
-      left: -300%;
-    }
-    95% {
-      left: -300%;
-    }
-    100% {
-      left: -400%;
-    }
-  }
-
-#imgHome {
-  margin-top: 28px;
-  width: 100%;
+  font-style: normal;
 }
 
 #hourBox {
   background: black ;
-  margin-top: 8px;
+  margin-top: 6px;
   align-content: center;
   letter-spacing: 1px;
   color: rgb(244, 209, 144);
@@ -253,76 +186,108 @@ p {
 }
 #gmap_canvas {
   width:100%;
-  height: 375px;
-  margin-top: 2px; 
+  height: 320px;
 }
 
-.sideBox {
-  background: rgb(121, 13, 7) ;
-  margin-top: 28px;
-  align-content: center;
-  width: 100%;
-  height: 900px;
-  display: block;
-  padding: 10px;
-}
-
-.orderBox {
-  background: rgb(121, 13, 7) ;
-  margin-top: 28px;
-  align-content: center;
-  width: 100%;
-  height: 900px;
-  display: block;
-  padding: 10px;
-}
-
+/* About Us */
 .imgUs {
-  margin-top: 375px;
+  margin-top: 73px;
   width: 100%;
-  height: 500px;
+  height: 615px;
+}
+
+h2 {
+  margin-top:-645px;
+  margin-left: -70px;
+  color: rgb(244, 209, 144);
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 3px;
+  font-size: 25px;
+  font-weight: bold;
+}
+p {
+  margin-top: 29px;
+  font-size: 14px;
+  color: rgb(244, 209, 144);
+  font-weight: bold;
+  text-align: left;
+  font-style: oblique;
 }
 
 #usComment {
-  width: 70%;
   margin-left: 14%;
-  font-size: 22px;
-  text-align: left;
   margin-top: 1%;
   width: 60%;
   padding: 4%;
   letter-spacing: 1px;
 }
 
+/* Menu */
+h1 {
+  margin-top: 3px;
+  text-align: center;
+  color: rgb(244, 209, 144);
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 3px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h4 {
+  text-shadow: 1px 1px 1px  black;
+  letter-spacing: 2px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: rgb(244, 209, 144);
+  text-align: center;
+  font-style: oblique;
+}
 .imgMenu {
   margin-top: 28px;
-  width: 105%;
-  margin-left: -10px;
+  width: 100%;
 }
 
 .imgFish {
-  margin-top: 25px;
-  width: 46%;
+  margin-top: 42px;
+  width: 53%;
 }
 
+/* Orders */
 .orderBox {
   background: rgb(121, 13, 7) ;
-  margin-top: 28px;
+  margin-top: 24px;
   align-content: center;
   width: 100%;
-  height: 900px;
-  display: block;
-  font-size: 20px;
-  padding: 10px;
+  padding: 4px;
 }
 
 .card {
-  margin-top: 5px;
-  text-shadow: 1px 1px 1px black;
+  margin-top: 1px;
+  font-weight: bold;
   font-size: 15px;
+  position: initial;
   background-color: rgb(244, 209, 144);
+
+}
+.input-group-text{
+  margin-top: -6px;
+  font-weight: bold;
+  font-size: 10px;
+  position: initial;
 }
 
+.btn2 {
+  margin-top: 1%;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(244, 209, 144);
+  /* width: 60%; */
+  background-color: black; 
+  letter-spacing: 3px;
+}
+
+/* Acount Index */
 .btn {
   margin-top: 6%;
   padding: 4px;
@@ -334,52 +299,50 @@ p {
   letter-spacing: 5px;
 }
 
-.btn2 {
-  margin-top: 2%;
-  padding: 4px;
-  font-weight: bold;
-  font-size: 20px;
-  color: rgb(244, 209, 144);
-  width: 40%;
-  background-color: black; 
-  letter-spacing: 5px;
-}
-
-.pageLink {
+.btn3 {
   color:  rgb(121, 13, 7);
   background-color:rgb(244, 209, 144);
   font-size: 20px;
   float: left;
   margin-left: 7%;
+  letter-spacing: 2px;
+  font-weight: bold;
   width: 40%;
-  border: 3px solid black;
-  padding: 5px;
+  border: 2px solid black;
+  padding: 2px;
   margin-top: 5%;
-  border-radius: 30px;
-  }
-
-.imgFish2 {
-  margin-top: 45px;
-  width: 50%;
 }
 
-h6 {
-  width: 100%;
+.imgApt {
+  margin-top: 65px;
+  width: 50%;
+  border: 3px solid black;
+  padding: 5px;
+}
 
-  margin-top: 52px;
-  font-size: 30px;
+/* Acount Login */
+.imgFish2 {
+  margin-top: 20px;
+  width: 50%;
+  border: 3px solid black;
+  padding: 5px;
+}
+
+/* Develpers Team */
+h6 {
+  margin-top: 35px;
+  font-size: 20px;
   color: rgb(244, 209, 144);
   font-weight: bold;
-  padding: 3%; 
   text-shadow: 2px 2px 2px black;
   letter-spacing: 3px;
   text-align: center;
   font-style: oblique;
 }
+
 #teamInfo {
   width: 100%;
- 
-  margin-top: 72px;
+  margin-top: 62px;
   /* background: rgb(121, 13, 7) ; */
   margin-top: 60px;
   align-content: center;
@@ -392,6 +355,17 @@ h6 {
   margin-top: 40px;
   width: 100%;
   padding: 2px;
-  border: 3px solid black;
+  border: 2px solid black;
   }
 
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    border: 2px solid black;
+    background-color: rgb(121, 13, 7);
+  }
+  li {
+    margin: 5px;
+    background-color: rgb(244, 209, 144);
+    font-weight: bold;
+  }

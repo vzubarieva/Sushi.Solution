@@ -6,7 +6,7 @@
 @model List<Sushi.Models.MenuItem>;
 
 <div class="orderBox">
-  <h5>Add a New Order</h5>
+  <h1>Add a New Order</h1>
   @if (ViewBag != null && !string.IsNullOrEmpty(ViewBag.ErrorMessage))
   {
     <h4>@ViewBag.ErrorMessage</h4>
@@ -18,8 +18,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Menu item name</th>
-            <th scope="col">Item price</th>
+            <th scope="col">Menu Item</th>
+            <th scope="col">Price</th>
             <th scope="col">Quantity</th>
           </tr>
         </thead>
@@ -29,7 +29,7 @@
           {
 
             <tr>
-              <th scope="row">
+              <th scope="row" id="row">
                 @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
               </th>
 
@@ -37,7 +37,7 @@
             "input-group-text"})
               </td>
 
-              <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0",
+              <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "input-group-text", @type = "number", @min = "0",
             @id
             =
             item.MenuItemId})
