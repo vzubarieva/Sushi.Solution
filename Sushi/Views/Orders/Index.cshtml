@@ -20,22 +20,17 @@
       </thead>
       <tbody>
         @{
-          int k = 1;
+          int k = Model.Count;
         }
         @foreach (Order order in Model)
         {
           <tr>
             <th scope="row">
-              @Html.ActionLink($"{k++}", "Details", new { id = order.OrderId })
+              @Html.ActionLink($"{k--}", "Details", new { id = order.OrderId })
             </th>
-            <td> @Html.Label(order.ItemsCount.ToString(), order.ItemsCount.ToString(), new{@class = "input-group-text"})
-            </td>
-            <td> @Html.Label(order.subTotalPrice.ToString(), $"${order.subTotalPrice.ToString()}", new{@class =
-            "input-group-text"})
-            </td>
-            <td> @Html.Label(order.TotalPrice.ToString("0.##"), $"${order.TotalPrice.ToString("0.##")}", new{@class =
-            "input-group-text"})
-            </td>
+            <td>@order.ItemsCount.ToString()</td>
+            <td>$@order.subTotalPrice.ToString()</td>
+            <td>$@order.TotalPrice.ToString("0.##")</td>
           </tr>
         }
       </tbody>

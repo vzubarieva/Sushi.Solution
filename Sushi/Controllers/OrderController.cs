@@ -31,9 +31,16 @@ namespace Sushi.Controllers
 
         public ActionResult Index()
         {
-            List<Order> model = _db.Orders.ToList();
-            // then in orders index we can show items ordered (from virtual property OrderItems)
+            // get current userId
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            // filter order for current user and sort descending
+            List<Order> model = _db.Orders
+                .AsQueryable()
+                .Where(order => order.UserId == userId)
+                .OrderByDescending(order => order.OrderId)
+                .ToList();
 
+            // then in orders index we can show items ordered (from virtual property OrderItems)
             return View(model);
         }
 
