@@ -19,6 +19,10 @@
 
 "Chihiro's Sushi & Bar" is a team week project that models a commercial website for a make-believe restaurant. Visitors are greeted on the home page with images of the restaurant and logo, a slideshow showcasing of some of the food and drinks available, restaurant business hours, and an interactive Google maps API that displays the restaurant's location. At the top of the home page is a nav bar where the user can view the full menu, place an order, or log in. By logging in, the user can view their order history and details such as number of items ordered, subtotal, and total price.
 
+![project-screenshot](Sushi/wwwroot/img/Screenshot-devteam.png)
+![project-screenshot](Sushi/wwwroot/img/screenshot-homepage.png)
+![project-screenshot](Sushi/wwwroot/img/Screenshot-menu.png)
+
 ## Setup/Installation Requirements
 
 - _Clone repository from GitHub_
