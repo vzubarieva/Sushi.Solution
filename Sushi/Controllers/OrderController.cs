@@ -43,6 +43,12 @@ namespace Sushi.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var thisOrderItems = _db.Orders.FirstOrDefault(o => o.OrderId == id);
+            return View(thisOrderItems);
+
+        }
         public ActionResult Create()
         {
             List<MenuItem> model = _db.MenuItems.ToList();
@@ -125,5 +131,6 @@ namespace Sushi.Controllers
             ViewBag.ErrorMessage = "Please add an order";
             return View(model);
         }
+
     }
 }

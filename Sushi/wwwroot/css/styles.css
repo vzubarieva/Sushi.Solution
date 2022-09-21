@@ -13,6 +13,9 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center; 
 }
+.card1{
+  height: 200px;
+}
 
 .container {
   margin: auto;
