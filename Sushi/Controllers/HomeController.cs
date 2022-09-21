@@ -10,29 +10,28 @@ using System;
 
 namespace Sushi.Controllers
 {
-    public class HomeController : Controller
+  public class HomeController : Controller
+  {
+    private readonly UserManager<ApplicationUser> _userManager;
+
+    public HomeController(UserManager<ApplicationUser> userManager)
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-
-        public HomeController(UserManager<ApplicationUser> userManager)
-        {
-            _userManager = userManager;
-        }
-
-        // [HttpGet("/")]
-        public async Task<ActionResult> Index()
-        {
-            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var currentUser = await _userManager.FindByIdAsync(userId);
-            ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
-            return View();
-        }
-
-        public ActionResult Dev()
-        {
-            return View();
-        }
-
-
+      _userManager = userManager;
     }
+
+    // [HttpGet("/")]
+    public async Task<ActionResult> Index()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      ViewBag.isLoggedIn = !String.IsNullOrEmpty(currentUser?.Id);
+      return View();
+    }
+
+    public ActionResult Dev()
+    {
+        return View();
+    }
+    
+  }
 }

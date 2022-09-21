@@ -4,14 +4,15 @@
 
 @using Sushi.Models;
 @model List<Sushi.Models.MenuItem>;
+
 <div class="menuItemBox">
-<h2>Menu Items</h2>
+  <h2>Menu Items</h2>
 
-
-@foreach (MenuItem menuItem in Model)
-{
-  @Html.ActionLink($"{menuItem.MenuItemName}", "Details", " ", new { id = menuItem.MenuItemId }, new {@class="btn btn-light"})
-  @Html.ActionLink($"{menuItem.MenuItemPrice}", "Details", " ", new { id = menuItem.MenuItemId }, new {@class="btn btn-light"})
-}
+  @foreach (MenuItem menuItem in Model)
+  {
+    @Html.ActionLink($"{menuItem.MenuItemName}", "Details", " ", new { id = menuItem.MenuItemId }, new {@class="btn btn-light"})
+    @Html.ActionLink($"{menuItem.MenuItemPrice}", "Details", " ", new { id = menuItem.MenuItemId }, new {@class="btn btn-light"})
+  }
+</div>
 
 

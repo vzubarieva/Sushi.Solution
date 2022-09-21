@@ -9,7 +9,7 @@
   <h5>Add a New Order</h5>
   @if (ViewBag != null && !string.IsNullOrEmpty(ViewBag.ErrorMessage))
   {
-    <p>@ViewBag.ErrorMessage</p>
+    <h4>@ViewBag.ErrorMessage</h4>
   }
 
   @using (Html.BeginForm())

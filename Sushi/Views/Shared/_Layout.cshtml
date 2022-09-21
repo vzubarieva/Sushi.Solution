@@ -2,42 +2,42 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>@ViewBag.PageTitle</title>
+  <meta charset="utf-8">
+  <title>@ViewBag.PageTitle</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="~/css/styles.css">
 </head>
 
 <body class="bamboo">
 
   <header class="pageHeader">
-      @await Html.PartialAsync("NavBar")
+    @await Html.PartialAsync("NavBar")
   </header>
 
   <div class="container">
   
-    <div class = "row">
-      <div class = "col1">
-        <img class="imgLogo" src="~/img/logo2.png">
-        <h3 id="sideCommentBox">If you love sushi, you'll love Chihiro's!</h3>
-        <div id="slider">
-            <figure>
-                <img src="~/img/sushi1.jpg">
-                <img src="~/img/sushi2.jpg">
-                <img src="~/img/sushi3.jpg">
-                <img src="~/img/sushi4.jpg">
-                <img src="~/img/sushi1.jpg">
-            </figure>
-        </div>
-        <h3 id="sideCommentBox">From sushi rolls to nigiri and sashimi, our sushi can only be described as a form of art. </h3>
-        </div>
-      <div class = "col2">
-          @RenderBody()
+  <div class = "row">
+    <div class = "col1">
+      <img class="imgLogo" src="~/img/logo3.png">
+      <h3 id="sideCommentBox">If you love sushi, you'll love CHIHIRO'S!</h3>
+      <div id="slider">
+        <figure>
+          <img src="~/img/sushi1.jpg">
+          <img src="~/img/sushi2.jpg">
+          <img src="~/img/sushi3.jpg">
+          <img src="~/img/sushi4.jpg">
+          <img src="~/img/sushi1.jpg">
+        </figure>
       </div>
+        <h3 id="sideCommentBox">From sushi rolls to nigiri and sashimi, our sushi can only be described as a form of art.</h3>
+      </div>
+    <div class = "col2">
+      @RenderBody()
     </div>
+  </div>
   </div> 
 
 </body>
