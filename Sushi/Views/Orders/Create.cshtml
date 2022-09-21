@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+@using Microsoft.AspNetCore.Http;
 @using Sushi.Models
 @model List<Sushi.Models.MenuItem>;
 
@@ -29,8 +29,7 @@
                 @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
               </th>
 
-              <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new{@class =
-            "input-group-text"})
+              <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new {@class = "input-group-text"})
               </td>
 
               <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0",

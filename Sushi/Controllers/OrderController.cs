@@ -30,9 +30,16 @@ namespace Sushi.Controllers
 
         public ActionResult Index()
         {
-            List<Order> model = _db.Orders.ToList();
-            // then in orders index we can show items ordered (from virtual property OrderItems)
+            // get current userId
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            // filter order for current user and sort descending
+            List<Order> model = _db.Orders
+                .AsQueryable()
+                .Where(order => order.UserId == userId)
+                .OrderByDescending(order => order.OrderId)
+                .ToList();
 
+            // then in orders index we can show items ordered (from virtual property OrderItems)
             return View(model);
         }
 
@@ -58,7 +65,6 @@ namespace Sushi.Controllers
 
             // create total variables
             double subTotalPrice = 0;
-            double TotalPrice = 0;
             int ItemsCount = 0;
 
             Order order = new Order { UserId = currentUser.Id };
@@ -108,11 +114,16 @@ namespace Sushi.Controllers
             order.subTotalPrice = subTotalPrice;
             order.TotalPrice = subTotalPrice * 1.1;
             order.ItemsCount = ItemsCount; // assign ItemsCount with count of all items wit > 0 ordered
+            if (ItemsCount > 0)
+            {
+                _db.Add(order);
 
-            _db.Add(order);
-
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            List<MenuItem> model = _db.MenuItems.ToList();
+            ViewBag.ErrorMessage = "Please add an order";
+            return View(model);
         }
     }
 }
