@@ -7,6 +7,10 @@
 
 <div class="orderBox">
   <h5>Add a New Order</h5>
+  @if (ViewBag != null && !string.IsNullOrEmpty(ViewBag.ErrorMessage))
+  {
+    <p>@ViewBag.ErrorMessage</p>
+  }
 
   @using (Html.BeginForm())
   {
@@ -29,7 +33,8 @@
                 @Html.Label(item.MenuItemName, item.MenuItemName, new{@class = "input-group-text"})
               </th>
 
-              <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new {@class = "input-group-text"})
+              <td> @Html.Label(item.MenuItemPrice.ToString(), $"${item.MenuItemPrice.ToString()}", new {@class =
+            "input-group-text"})
               </td>
 
               <td> @Html.TextBox(item.MenuItemId.ToString(), 0, new{@class = "form-control", @type = "number", @min = "0",
