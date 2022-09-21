@@ -40,7 +40,7 @@ li {
   height: 52px;
   background-image: linear-gradient(90deg,rgb(121, 13, 7), rgb(240, 111, 111), rgb(121, 13, 7));
   align-content: center;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: bold;
 }
 
@@ -128,17 +128,20 @@ h4 {
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 25px;
   color: rgb(244, 209, 144);
   text-align: center;
+  font-weight: bold;
   font-style: normal;
 }
 
 h6 {
-  margin-top: -120px;
+  margin-top: 80px;
   font-size: 30px;
-  color: rgb(176, 10, 10);
+  color: rgb(121, 13, 7);
   font-weight: bold;
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 3px;
   text-align: center;
   font-style: oblique;
 }
@@ -172,7 +175,7 @@ p {
   .col2 {
     width:  60%;
     padding: 1%  ; 
-    /* overflow: hidden; */
+    overflow: hidden;
     font-weight: bold;
   }
 
@@ -289,7 +292,7 @@ p {
 }
 
 .imgUs {
-  margin-top: 318px;
+  margin-top: 375px;
   margin-left: 0%;
   width: 100%;
 }
@@ -317,15 +320,21 @@ p {
   width: 50%;
 }
 
+.orderBox  {
+  background: rgb(121, 13, 7) ;
+  margin-top: 28px;
+  align-content: center;
+  width: 100%;
+  height: 900px;
+  display: block;
+  font-size: 20px;
+  padding: 10px;
+}
+
 .card {
   margin-top: 5px;
   text-shadow: 1px 1px 1px black;
-<<<<<<< HEAD
-  font-size: 20px;
-=======
   font-size: 15px;
-
->>>>>>> cbb47a68a49d8fa6d3044bfc58d9605a3cefb0b5
   background-color: rgb(244, 209, 144);
 }
 
@@ -352,32 +361,39 @@ p {
   letter-spacing: 5px;
 }
 
- .pageLink {
-    color:  rgb(121, 13, 7);
-    background-color:rgb(244, 209, 144);
-    font-size: 20px;
-    float: left;
-    margin-left: 7%;
-    width: 40%;
-    border: 3px solid black;
-    padding: 5px;
-    margin-top: 5%;
-    border-radius: 30px;
+.pageLink {
+  color:  rgb(121, 13, 7);
+  background-color:rgb(244, 209, 144);
+  font-size: 20px;
+  float: left;
+  margin-left: 7%;
+  width: 40%;
+  border: 3px solid black;
+  padding: 5px;
+  margin-top: 5%;
+  border-radius: 30px;
   }
 
-
   .imgFish2 {
-    margin-top: 45px;
-    width: 50%;
+  margin-top: 45px;
+  width: 50%;
   }
 
   #teamInfo {
-    margin-top: 200px;
+  margin-top: 200px;
+  background: rgb(121, 13, 7) ;
+  margin-top: 28px;
+  align-content: center;
+  width: 100%;
+  
+  padding: 10px;
+ 
   }
 
   .imgTeam {
-    margin-top: 40px;
-    width: 100%;
-    padding: 2px;
+  margin-top: 40px;
+  width: 100%;
+  padding: 2px;
+  border: 3px solid black;
   }
 
