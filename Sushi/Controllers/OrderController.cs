@@ -14,7 +14,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 
-
 namespace Sushi.Controllers
 {
     [Authorize]
@@ -115,14 +114,15 @@ namespace Sushi.Controllers
             order.subTotalPrice = subTotalPrice;
             order.TotalPrice = subTotalPrice * 1.1;
             order.ItemsCount = ItemsCount; // assign ItemsCount with count of all items wit > 0 ordered
-            if(ItemsCount > 0){
+            if (ItemsCount > 0)
+            {
                 _db.Add(order);
 
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             List<MenuItem> model = _db.MenuItems.ToList();
-            ViewBag.ErrorMessage = "Please add en item";
+            ViewBag.ErrorMessage = "Please add an order";
             return View(model);
         }
     }
