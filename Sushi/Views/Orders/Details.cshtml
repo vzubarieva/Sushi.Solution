@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Sushi.Models;
+@model Sushi.Models.Order;
+@{
+  int k=1;
+}
+<div class="sideBox">
+
+  <h5>Menu Items: @Model.ItemsCount</h5>
+    <ul>
+      @foreach(var item in Model.OrderItems){
+        <li>@k|@item.MenuItemName|@item.MenuItemPrice</li>
+        k+=1;
+      }
+    
+    </ul>
+
+</div>
