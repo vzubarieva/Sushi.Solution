@@ -88,55 +88,55 @@ namespace Sushi.Models
               MenuItemId = 11,
               MenuItemName = "Fillet of madai",
               MenuItemPrice = 6,
-          }
-      // new MenuItem
-      // {
-      //     MenuItemId = 12,
-      //     MenuItemName = "Fillet of tomago",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 13,
-      //     MenuItemName = "Fillet of inari",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 14,
-      //     MenuItemName = "Fillet of madai",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 15,
-      //     MenuItemName = "Fillet of tomago",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 16,
-      //     MenuItemName = "Fillet of suzuki",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 17,
-      //     MenuItemName = "Fillet of unagi",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 18,
-      //     MenuItemName = "Fillet of ebi",
-      //     MenuItemPrice = 6,
-      // },
-      // new MenuItem
-      // {
-      //     MenuItemId = 19,
-      //     MenuItemName = "Fillet of ika",
-      //     MenuItemPrice = 6,
-      // }
+          },
+      new MenuItem
+      {
+          MenuItemId = 12,
+          MenuItemName = "Fillet of tomago",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 13,
+          MenuItemName = "Fillet of inari",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 14,
+          MenuItemName = "Fillet of madai",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 15,
+          MenuItemName = "Fillet of tomago",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 16,
+          MenuItemName = "Fillet of suzuki",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 17,
+          MenuItemName = "Fillet of unagi",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 18,
+          MenuItemName = "Fillet of ebi",
+          MenuItemPrice = 6,
+      },
+      new MenuItem
+      {
+          MenuItemId = 19,
+          MenuItemName = "Fillet of ika",
+          MenuItemPrice = 6,
+      }
       );
 
     }

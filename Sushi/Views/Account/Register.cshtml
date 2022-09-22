@@ -11,16 +11,17 @@
 
   @using (Html.BeginForm("Register", "Account", FormMethod.Post))
   {
-    <h5 class = "formInfo">@Html.LabelFor(user => user.Email)<br>
+    <h6 class = "formInfo">@Html.LabelFor(user => user.Email)<br>
     @Html.TextBoxFor(user=> user.Email, new { required = "required" })<br>
 
     @Html.LabelFor(user=> user.Password)<br>
     @Html.PasswordFor(user=> user.Password, new { required = "required" })<br>
 
     @Html.LabelFor(user=> user.ConfirmPassword)<br>
-    @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br></h5>
+    @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br></h6>
 
-    <input id = "btnAccount" type="submit" value="Register" />
+    <input class = "btn2" type="submit" value="Register" />
   }
   <img class ="imgFish2" src = "~/img/fish3.png">
+  @* <img class ="imgFish2" src = "~/img/fish4.png"> *@
 </div>
