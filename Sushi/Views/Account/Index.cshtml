@@ -10,7 +10,7 @@
 
   @if (User.Identity.IsAuthenticated)
   {
-    <h5 >Hello @User.Identity.Name!</h5>
+    <h6 >Hello @User.Identity.Name!</h6>
 
     @using (Html.BeginForm("LogOff", "Account"))
     {

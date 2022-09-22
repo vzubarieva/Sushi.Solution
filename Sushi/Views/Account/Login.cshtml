@@ -9,14 +9,14 @@
   <h1>Please Log in</h1>
   @using (Html.BeginForm())
   {
-    <h5 class="formInfo">@Html.LabelFor(m => m.Email)<br>
+    <h6 class="formInfo">@Html.LabelFor(m => m.Email)<br>
       @Html.TextBoxFor(m => m.Email, new { required = "required" })<br>
 
       @Html.LabelFor(m => m.Password)<br>
-      @Html.PasswordFor(m => m.Password, new { required = "required" })</h5>
+      @Html.PasswordFor(m => m.Password, new { required = "required" })</h6>
 
     <input type="submit" value="Login" class="btn2" />
   }
-  <img class ="imgFish2" src = "~/img/fish3.png">
+  @* <img class ="imgFish2" src = "~/img/fish3.png"> *@
   <img class ="imgFish2" src = "~/img/fish4.png">
 </div>

@@ -20,7 +20,7 @@ body {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: 32px;
+  height: 39px;
   background-image: linear-gradient(90deg,rgb(121, 13, 7), rgb(240, 111, 111), rgb(121, 13, 7));
   align-content: center;
   font-weight: bold;
@@ -45,8 +45,8 @@ body {
 
 .btnNav {
   letter-spacing: 1px;
-  padding: 8px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 18px;
   color: rgb(244, 209, 144);
   text-shadow: 1px 1px 1px black;
 }
@@ -77,10 +77,10 @@ body {
 /* Right side box */
 .sideBox {
   background: rgb(121, 13, 7) ;
-  margin-top: 23px;
+  margin-top: 29px;
   align-content: center;
   width: 100%;
-  height: 700px;
+  height: 887px;
   display: block;
   padding: 10px;
 }
@@ -191,14 +191,14 @@ h5 {
 
 /* About Us */
 .imgUs {
-  margin-top: 73px;
+  margin-top: 30px;
   width: 100%;
-  height: 615px;
+  height: 890px;
 }
 
 h2 {
-  margin-top:-645px;
-  margin-left: -70px;
+  margin-top:-845px;
+  margin-left: -220px;
   color: rgb(244, 209, 144);
   text-shadow: 2px 2px 2px black;
   letter-spacing: 3px;
@@ -207,7 +207,7 @@ h2 {
 }
 p {
   margin-top: 29px;
-  font-size: 14px;
+  font-size: 20px;
   color: rgb(244, 209, 144);
   font-weight: bold;
   text-align: left;
@@ -243,13 +243,14 @@ h4 {
   font-style: oblique;
 }
 .imgMenu {
-  margin-top: 28px;
+  margin-top: 10px;
   width: 100%;
 }
 
 .imgFish {
-  margin-top: 42px;
-  width: 53%;
+
+  margin-top: 35px;
+  width: 43%;
 }
 
 /* Orders */
@@ -258,22 +259,25 @@ h4 {
   margin-top: 24px;
   align-content: center;
   width: 100%;
-  padding: 4px;
+  padding: 5px;
 }
 
 .card {
-  margin-top: 1px;
-  font-weight: bold;
-  font-size: 15px;
-  position: initial;
   background-color: rgb(244, 209, 144);
-
-}
-.input-group-text{
-  margin-top: -6px;
-  font-weight: bold;
-  font-size: 10px;
   position: initial;
+}
+
+.table {
+  width: 80%;
+  font-size: 18px;
+  background-color: rgb(244, 209, 144);
+  margin-left: 12%;
+}
+
+.input-group-text{
+  /* margin-top: -6px; */
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .btn2 {
@@ -282,7 +286,6 @@ h4 {
   font-weight: bold;
   font-size: 20px;
   color: rgb(244, 209, 144);
-  /* width: 60%; */
   background-color: black; 
   letter-spacing: 3px;
 }
@@ -314,7 +317,7 @@ h4 {
 }
 
 .imgApt {
-  margin-top: 65px;
+  margin-top: 25px;
   width: 50%;
   border: 3px solid black;
   padding: 5px;
@@ -322,29 +325,39 @@ h4 {
 
 /* Acount Login */
 .imgFish2 {
-  margin-top: 20px;
-  width: 50%;
+  margin-top: 100px;
+  width: 60%;
   border: 3px solid black;
   padding: 5px;
+}
+/* Acount Register */
+.sideBox2 {
+  background: rgb(121, 13, 7) ;
+  margin-top: 29px;
+  align-content: center;
+  width: 100%;
+  height: 885px;
+  display: block;
+  padding: 10px;
+  font-size: 25px;
 }
 
 /* Develpers Team */
 h6 {
-  margin-top: 35px;
+  margin-top: 15px;
   font-size: 20px;
   color: rgb(244, 209, 144);
   font-weight: bold;
   text-shadow: 2px 2px 2px black;
   letter-spacing: 3px;
   text-align: center;
-  font-style: oblique;
 }
 
 #teamInfo {
   width: 100%;
-  margin-top: 62px;
+
   /* background: rgb(121, 13, 7) ; */
-  margin-top: 60px;
+  margin-top: 20px;
   align-content: center;
   width: 100%;
   /* padding: 10px; */
@@ -352,7 +365,7 @@ h6 {
 }
 
   .imgTeam {
-  margin-top: 40px;
+  margin-top: 10px;
   width: 100%;
   padding: 2px;
   border: 2px solid black;
@@ -369,3 +382,10 @@ h6 {
     background-color: rgb(244, 209, 144);
     font-weight: bold;
   }
+  .imgTeam2 {
+    margin-top: 10px;
+    width: 100%;
+    height: 280px;
+    padding: 2px;
+    border: 2px solid black;
+    }
